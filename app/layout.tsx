@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "CHAKRAVYUHA 2026 | State Level 24-Hour Innovation Sprint",
   description: "Join CHAKRAVYUHA 2026 - A State Level 24-Hour Innovation Sprint organized by JJCET, Trichy. Build innovative solutions and win exciting prizes.",
   keywords: ["hackathon", "innovation", "JJCET", "CHAKRAVYUHA", "coding competition", "technology"],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
