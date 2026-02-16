@@ -38,31 +38,7 @@ export function Navbar() {
               <img 
                 src="/College-site-logo.png" 
                 alt="College Logo" 
-                className="h-full w-auto object-contain"
-              />
-            </m.div>
-            {/* NAAC Logo */}
-            <m.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              className="h-8 sm:h-10 w-auto hidden sm:block"
-            >
-              <img 
-                src="/NACC-A.png" 
-                alt="NAAC A Grade" 
-                className="h-full w-auto object-contain"
-              />
-            </m.div>
-            {/* NBA Logo */}
-            <m.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              className="h-8 sm:h-10 w-auto hidden sm:block"
-            >
-              <img 
-                src="/NBA.png" 
-                alt="NBA Accredited" 
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
               />
             </m.div>
           </Link>
