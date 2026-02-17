@@ -598,6 +598,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v1.1.5 - 2026-02-17
+
+### Documentation Updates
+- Updated package.json version to v1.1.4
+- Fixed tech stack references (Next.js 16, React 19, TypeScript 5)
+- Updated folder structure documentation with all components
+- Fixed Tailwind v4 CSS-based config reference (removed tailwind.config.ts)
+- Added missing components to docs (HomeButton, ScrollToTop, ScrollToTopOnMount, effects/, motion/, providers/)
+- Created comprehensive UI/UX documentation (docs/UI.md)
+  - Design philosophy and principles
+  - Complete color system (3-color palette)
+  - Typography scale and effects
+  - Spacing and layout system
+  - All visual effects detailed
+  - Component specifications (all 10+ components)
+  - Animation system documentation
+  - Responsive design approach
+  - Accessibility guidelines
+  - User flows and interactions
+  - Micro-interactions breakdown
+
+### College Name Updates
+- Updated all instances to "JJ College of Engineering and Technology (Autonomous)"
+- Footer.tsx: Description and copyright
+- app/layout.tsx: Metadata description
+- config/eventConfig.ts: Venue address
+
+### SETUP.md Fixes
+- Removed duplicate Google Drive Configuration section
+- Removed non-existent test script references (npm run test:validation, npm run test:utils)
+- Updated version header to v1.1.4
+
+### Dev Log
+
+### 2026-02-17
+- Analyzed project and updated documentation
+- Created comprehensive UI.md with full design specifications
+- Updated college name across entire project
+- Fixed documentation inconsistencies
+- Verified build passes successfully
+
+---
+
 ## Future Enhancements (v1.2.0+)
 
 Potential features for future versions:

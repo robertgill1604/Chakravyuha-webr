@@ -1,6 +1,6 @@
 # Setup Guide
 
-## CHAKRAVYUHA - Complete Setup Instructions
+## CHAKRAVYUHA v1.1.4 - Complete Setup Instructions
 
 ---
 
@@ -83,37 +83,6 @@ The JSON key file is saved at:
 1. Open `.env.local` in project root
 2. Replace `YOUR_DRIVE_FOLDER_ID_HERE` with your folder ID
 3. Save the file
-
----
-
-## 3. Google Drive Configuration
-
-### Step 3.1: Create Upload Folder
-
-1. Go to [Google Drive](https://drive.google.com)
-2. Click **"New"** → **"Folder"**
-3. Name it: `CHAKRAVYUHA-2026-Submissions`
-4. Open the folder
-
-### Step 3.2: Get Folder ID
-
-1. Look at the URL in your browser:
-   ```
-   https://drive.google.com/drive/folders/1ABC123xyz...
-   ```
-2. Copy the part after `/folders/`:
-   - Example: `1ABC123xyz...` (long string of characters)
-3. This is your **Folder ID** - save it for later
-
-### Step 3.3: Share Folder with Service Account
-
-1. Right-click on the folder
-2. Click **"Share"**
-3. In the "Add people and groups" field:
-   - Paste the **Service Account Email** from Step 2.5
-4. Set permission to **"Editor"**
-5. Click **"Send"**
-6. **Verify:** The service account should appear in the sharing list
 
 ---
 
@@ -352,17 +321,14 @@ In Vercel project settings:
 
 ## 8. Testing
 
-### 8.1 Unit Testing
+### 8.1 Manual Testing
 
 Test individual components:
 
-```bash
-# Test form validation
-npm run test:validation
-
-# Test utility functions
-npm run test:utils
-```
+1. Open browser at `http://localhost:3000`
+2. Test form validation
+3. Test utility functions via browser console
+4. Verify registration flow end-to-end
 
 ### 8.2 Integration Testing
 
@@ -544,5 +510,5 @@ chakravyuha/
 
 ---
 
-**Last Updated:** 2026-02-16
-**Version:** v1.0.0
+**Last Updated:** 2026-02-17
+**Version:** v1.1.4

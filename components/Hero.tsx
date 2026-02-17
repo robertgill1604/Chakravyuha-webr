@@ -72,7 +72,7 @@ export function Hero() {
           }}
         >
           <m.span 
-            className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#00ff88]/10 border border-[#00ff88]/40 text-[#00ff88] text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            className="inline-flex items-center justify-center px-2 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#00ff88]/10 border border-[#00ff88]/40 text-[#00ff88] text-xs font-medium mb-3 sm:mb-6"
             animate={{
               boxShadow: [
                 "0 0 20px rgba(0, 255, 136, 0.2)",
@@ -92,7 +92,7 @@ export function Hero() {
               animate={{ rotate: [0, 15, -15, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+              <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 flex-shrink-0" />
             </m.span>
             <span className="whitespace-nowrap">{eventConfig.secondSubtitle}</span>
           </m.span>
@@ -139,39 +139,61 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
+          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4"
         >
           {[
             { icon: Calendar, text: formatDate(eventConfig.date), color: "#00ff88" },
-            { icon: MapPin, text: eventConfig.venue, color: "#00d4ff" },
+            { icon: MapPin, text: "JJCET (Autonomous), Trichy", color: "#00d4ff", link: "https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" },
             { icon: Users, text: `${eventConfig.teamSize.min}-${eventConfig.teamSize.max} Members`, color: "#a855f7" },
           ].map((item, index) => (
-            <m.div 
-              key={index}
-              className="flex items-center justify-center space-x-2 text-white/80 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border text-sm"
-              style={{
-                backgroundColor: `${item.color}10`,
-                borderColor: `${item.color}20`,
-              }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              whileHover={{ 
-                scale: 1.05, 
-                borderColor: item.color,
-                boxShadow: `0 0 20px ${item.color}30`,
-                backgroundColor: `${item.color}20`,
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <m.span
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: index * 0.5 }}
+            item.link ? (
+              <a 
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 text-white/80 px-2 sm:px-5 py-1.5 sm:py-2 rounded-full border text-xs sm:text-sm max-w-[90vw] sm:max-w-none cursor-pointer"
+                style={{
+                  backgroundColor: `${item.color}10`,
+                  borderColor: `${item.color}20`,
+                }}
               >
-                <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" style={{ color: item.color }} />
-              </m.span>
-              <span className="font-medium whitespace-nowrap">{item.text}</span>
-            </m.div>
+                <m.span
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: index * 0.5 }}
+                >
+                  <item.icon className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" style={{ color: item.color }} />
+                </m.span>
+                <span className="font-medium truncate text-[10px] sm:text-sm">{item.text}</span>
+              </a>
+            ) : (
+              <m.div 
+                key={index}
+                className="flex items-center justify-center gap-1.5 sm:gap-2 text-white/80 px-2 sm:px-5 py-1.5 sm:py-2 rounded-full border text-xs sm:text-sm max-w-[90vw] sm:max-w-none"
+                style={{
+                  backgroundColor: `${item.color}10`,
+                  borderColor: `${item.color}20`,
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  borderColor: item.color,
+                  boxShadow: `0 0 20px ${item.color}30`,
+                  backgroundColor: `${item.color}20`,
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <m.span
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: index * 0.5 }}
+                >
+                  <item.icon className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" style={{ color: item.color }} />
+                </m.span>
+                <span className="font-medium truncate text-[10px] sm:text-sm">{item.text}</span>
+              </m.div>
+            )
           ))}
         </m.div>
 

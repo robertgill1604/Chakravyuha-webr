@@ -59,50 +59,52 @@ export default function ContactPage() {
                 </p>
 
                 <div className="space-y-6">
-                  {/* Student Coordinator - Ayyappan */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-[#22D3EE]" />
+                  {/* Faculty Coordinator */}
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37]" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-1">Student Coordinator - Ayyappan</h3>
-                      <p className="text-white/60">{eventConfig.contact.studentCoordinator.phone}</p>
-                      <p className="text-sm text-white/40 mt-1">For registration queries</p>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Faculty Coordinator</h3>
+                      <p className="text-white/80 text-xs sm:text-sm break-words leading-tight">{eventConfig.contact.facultyCoordinator.name}</p>
+                      <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.facultyCoordinator.phone}</p>
+                      <p className="text-xs text-white/40 mt-0.5 sm:mt-1">For general queries</p>
                     </div>
                   </div>
 
-                  {/* Faculty Coordinator - Narayanasamy */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-[#D4AF37]" />
+                  {/* Student Coordinator */}
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#00d4ff]" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-1">Faculty Coordinator - Narayanasamy</h3>
-                      <p className="text-white/60">{eventConfig.contact.facultyCoordinator.phone}</p>
-                      <p className="text-sm text-white/40 mt-1">For general queries</p>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Student Coordinator</h3>
+                      <p className="text-white/80 text-xs sm:text-sm break-words leading-tight">{eventConfig.contact.studentCoordinator.name}</p>
+                      <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.studentCoordinator.phone}</p>
+                      <p className="text-xs text-white/40 mt-0.5 sm:mt-1">For registration queries</p>
                     </div>
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-[#22D3EE]" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#00d4ff]" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-1">Email</h3>
-                      <p className="text-white/60">{eventConfig.contact.studentCoordinator.email}</p>
-                      <p className="text-sm text-white/40 mt-1">We respond within 24 hours</p>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Email</h3>
+                      <p className="text-white/60 text-xs sm:text-sm break-words">{eventConfig.contact.studentCoordinator.email}</p>
+                      <p className="text-xs text-white/40 mt-0.5 sm:mt-1">We respond within 24 hours</p>
                     </div>
                   </div>
 
                   {/* Venue */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-[#22D3EE]" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#00d4ff]" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-1">Venue</h3>
-                      <p className="text-white/60">{eventConfig.venue}</p>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Venue</h3>
+                      <p className="text-white/60 text-xs sm:text-sm break-words">{eventConfig.venue}</p>
                       <p className="text-sm text-white/40 mt-1">Tamil Nadu, India</p>
                     </div>
                   </div>

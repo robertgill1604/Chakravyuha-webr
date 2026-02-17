@@ -92,11 +92,11 @@ export function Footer() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              State Level 24-Hour Innovation Sprint organized by JJCET, Trichy. 
+              State Level 24-Hour Innovation Sprint organized by JJ College of Engineering and Technology (Autonomous), Trichy. 
               Unleash your creativity and build innovative solutions.
             </m.p>
             <p className="text-white/40 text-sm">
-              © {currentYear} JJCET. All rights reserved.
+              © {currentYear} JJ College of Engineering and Technology (Autonomous). All rights reserved.
             </p>
           </m.div>
 
@@ -160,8 +160,8 @@ export function Footer() {
             </m.h4>
             <ul className="space-y-3 sm:space-y-4">
               {[
-                { icon: MapPin, text: eventConfig.venue, color: "#00ff88" },
-                { icon: Phone, text: `${eventConfig.contact.studentCoordinator.name}: ${eventConfig.contact.studentCoordinator.phone}`, color: "#00d4ff" },
+                { icon: MapPin, text: "JJ College of Engineering and Technology (Autonomous), Trichy", color: "#00ff88", link: "https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" },
+                { icon: Phone, text: `Student Coordinator ${eventConfig.contact.studentCoordinator.name}: ${eventConfig.contact.studentCoordinator.phone}`, color: "#00d4ff" },
                 { icon: Mail, text: eventConfig.contact.studentCoordinator.email || "contact@chakravyuha.in", color: "#a855f7" },
               ].map((item, index) => (
                 <m.li 
@@ -170,7 +170,7 @@ export function Footer() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
-                  whileHover={{ x: 8 }}
+                  whileHover={item.link ? {} : { x: 8 }}
                 >
                   <m.div 
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 border"
@@ -186,7 +186,18 @@ export function Footer() {
                   >
                     <item.icon className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: item.color }} />
                   </m.div>
-                  <span className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2">{item.text}</span>
+                  {item.link ? (
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2 hover:text-[#00ff88] transition-colors"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2">{item.text}</span>
+                  )}
                 </m.li>
               ))}
             </ul>

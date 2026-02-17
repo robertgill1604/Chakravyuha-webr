@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { m } from "framer-motion";
-import { Trophy, Users, Calendar, ArrowRight, Sparkles } from "lucide-react";
+import { Trophy, Users, Calendar, ArrowRight, Sparkles, CreditCard, Gift, Layers } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { Timeline } from "@/components/Timeline";
 import { FacilitiesGrid } from "@/components/FacilitiesGrid";
@@ -42,48 +42,75 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-8"
+            className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4"
           >
-            {/* First Prize */}
+            {/* Registration Fee */}
             <m.div
               whileHover={{ y: -4 }}
-              className="relative p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#D4AF37]/30 overflow-hidden group"
+              className="relative p-3 sm:p-5 rounded-xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#00ff88]/20 overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-[#D4AF37]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Trophy className="w-6 h-6 sm:w-10 sm:h-10 text-[#D4AF37] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-4xl font-bold text-[#D4AF37] mb-1 sm:mb-2">
-                {eventConfig.prizes.first}
+              <div className="absolute inset-0 bg-[#00ff88]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CreditCard className="w-5 h-5 sm:w-8 sm:h-8 text-[#00ff88] mb-2" />
+              <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                <AnimatedCounter target={eventConfig.registrationFee} prefix="₹" duration={2} />
               </div>
-              <div className="text-white/60 text-xs sm:text-base">First Prize</div>
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+              <div className="text-white/60 text-xs">Registration Fee</div>
             </m.div>
 
-            {/* Registration Count */}
+            {/* Total Prize Pool */}
             <m.div
               whileHover={{ y: -4 }}
-              className="relative p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-white/[0.06] overflow-hidden group"
+              className="relative p-3 sm:p-5 rounded-xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#D4AF37]/30 overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Users className="w-6 h-6 sm:w-10 sm:h-10 text-[#22D3EE] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
+              <div className="absolute inset-0 bg-[#D4AF37]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Gift className="w-5 h-5 sm:w-8 sm:h-8 text-[#D4AF37] mb-2" />
+              <div className="text-lg sm:text-2xl font-bold text-[#D4AF37] mb-1">
+                <AnimatedCounter target="₹35,000" prefix="₹" suffix="+" duration={2} />
+              </div>
+              <div className="text-white/60 text-xs">Total Prize Pool</div>
+            </m.div>
+
+            {/* Themes */}
+            <m.div
+              whileHover={{ y: -4 }}
+              className="relative p-3 sm:p-5 rounded-xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#a855f7]/30 overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-[#a855f7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Layers className="w-5 h-5 sm:w-8 sm:h-8 text-[#a855f7] mb-2" />
+              <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                <AnimatedCounter target={eventConfig.themes.length} duration={2} />
+              </div>
+              <div className="text-white/60 text-xs">Themes</div>
+            </m.div>
+
+            {/* Teams Registered */}
+            <m.div
+              whileHover={{ y: -4 }}
+              className="relative p-3 sm:p-5 rounded-xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#00d4ff]/30 overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-[#00d4ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Users className="w-5 h-5 sm:w-8 sm:h-8 text-[#00d4ff] mb-2" />
+              <div className="text-lg sm:text-2xl font-bold text-white mb-1">
                 {registrationCount !== null ? (
                   <AnimatedCounter target={registrationCount} duration={2} />
                 ) : (
                   "..."
                 )}
               </div>
-              <div className="text-white/60 text-xs sm:text-base">Teams Registered</div>
+              <div className="text-white/60 text-xs">Teams Registered</div>
             </m.div>
 
             {/* Duration */}
             <m.div
               whileHover={{ y: -4 }}
-              className="relative p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-white/[0.06] overflow-hidden group"
+              className="relative p-3 sm:p-5 rounded-xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-white/[0.06] overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-[#22D3EE]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Calendar className="w-6 h-6 sm:w-10 sm:h-10 text-[#2563EB] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">24</div>
-              <div className="text-white/60 text-xs sm:text-base">Hours of Coding</div>
+              <div className="absolute inset-0 bg-[#2563EB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Calendar className="w-5 h-5 sm:w-8 sm:h-8 text-[#2563EB] mb-2" />
+              <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                <AnimatedCounter target={24} suffix=" hrs" duration={2} />
+              </div>
+              <div className="text-white/60 text-xs">Hours of Coding</div>
             </m.div>
           </m.div>
         </div>
@@ -179,7 +206,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-sm sm:text-xl font-bold text-white mb-1 sm:mb-2">1st Prize</h3>
                 <div className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-[#D4AF37] to-[#F0D878] bg-clip-text text-transparent">
-                  {eventConfig.prizes.first}
+                  <AnimatedCounter target={eventConfig.prizes.first} prefix="₹" duration={2} />
                 </div>
               </div>
             </m.div>
@@ -197,7 +224,9 @@ export default function Home() {
                 <Trophy className="w-5 h-5 sm:w-8 sm:h-8 text-[#2563EB]" />
               </div>
               <h3 className="text-sm sm:text-xl font-bold text-white mb-1 sm:mb-2">2nd Prize</h3>
-              <div className="text-2xl sm:text-4xl font-bold text-white">{eventConfig.prizes.second}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white">
+                <AnimatedCounter target={eventConfig.prizes.second} prefix="₹" duration={2} />
+              </div>
             </m.div>
 
             {/* Third Prize */}
@@ -213,7 +242,9 @@ export default function Home() {
                 <Trophy className="w-5 h-5 sm:w-8 sm:h-8 text-[#2563EB]" />
               </div>
               <h3 className="text-sm sm:text-xl font-bold text-white mb-1 sm:mb-2">3rd Prize</h3>
-              <div className="text-2xl sm:text-4xl font-bold text-white">{eventConfig.prizes.third}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white">
+                <AnimatedCounter target={eventConfig.prizes.third} prefix="₹" duration={2} />
+              </div>
             </m.div>
           </div>
 

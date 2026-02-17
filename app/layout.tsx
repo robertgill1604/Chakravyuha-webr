@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider } from "@/components/providers/MotionProvider";
@@ -8,9 +8,15 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnMount } from "@/components/ScrollToTopOnMount";
 import { HomeButton } from "@/components/HomeButton";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "CHAKRAVYUHA 2026 | State Level 24-Hour Innovation Sprint",
-  description: "Join CHAKRAVYUHA 2026 - A State Level 24-Hour Innovation Sprint organized by JJCET, Trichy. Build innovative solutions and win exciting prizes.",
+  description: "Join CHAKRAVYUHA 2026 - A State Level 24-Hour Innovation Sprint organized by JJ College of Engineering and Technology (Autonomous), Trichy. Build innovative solutions and win exciting prizes.",
   keywords: ["hackathon", "innovation", "JJCET", "CHAKRAVYUHA", "coding competition", "technology"],
   icons: {
     icon: "/favicon.png",

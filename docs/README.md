@@ -24,10 +24,11 @@ CHAKRAVYUHA is a production-grade institutional hackathon website built for JJCE
 ## Tech Stack
 
 ### Frontend
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript 5
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion
+- **Scrolling**: Lenis (smooth scroll)
 - **Forms**: React Hook Form + Zod
 
 ### Backend (Serverless)
@@ -175,6 +176,71 @@ chakravyuha/
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx               # Root layout with fonts
 │   ├── page.tsx                 # Home page
+│   ├── globals.css              # Global styles (Tailwind v4)
+│   ├── themes/
+│   │   └── page.tsx             # Themes page
+│   ├── register/
+│   │   └── page.tsx             # Registration page
+│   ├── guidelines/
+│   │   └── page.tsx             # Guidelines page
+│   ├── contact/
+│   │   └── page.tsx             # Contact page
+│   └── api/
+│       ├── register/
+│       │   └── route.ts         # Registration API
+│       └── registration-count/
+│           └── route.ts         # Count API
+├── components/                   # React components
+│   ├── Navbar.tsx               # Navigation
+│   ├── Footer.tsx               # Footer
+│   ├── Hero.tsx                 # Hero section
+│   ├── SectionWrapper.tsx       # Animated section wrapper
+│   ├── ThemeCard.tsx            # Theme display card
+│   ├── Timeline.tsx             # Event timeline
+│   ├── RegistrationForm.tsx     # Registration form
+│   ├── FacilitiesGrid.tsx       # Facilities display
+│   ├── Countdown.tsx            # Event countdown
+│   ├── HomeButton.tsx           # Animated home button
+│   ├── ScrollToTop.tsx          # Scroll to top button
+│   ├── ScrollToTopOnMount.tsx   # Scroll on mount helper
+│   ├── effects/                 # Animation effects
+│   │   ├── FloatingShapes.tsx   # Floating background shapes
+│   │   ├── GlowEffect.tsx       # Reusable glow wrapper
+│   │   └── ScrollReveal.tsx     # Intersection Observer wrapper
+│   ├── motion/                  # Motion components
+│   │   ├── AnimatedCounter.tsx  # Number counting animation
+│   │   └── StaggerContainer.tsx # Staggered children animations
+│   └── providers/               # Context providers
+│       ├── MotionProvider.tsx   # Framer Motion LazyMotion setup
+│       └── SmoothScrollProvider.tsx # Lenis integration
+├── lib/                         # Utilities & integrations
+│   ├── googleDrive.ts           # Google Drive API
+│   ├── googleSheets.ts          # Google Sheets API
+│   ├── validation.ts            # Zod schemas
+│   ├── rateLimiter.ts           # Rate limiting logic
+│   └── utils.ts                 # Helper functions
+├── config/                      # Configuration
+│   └── eventConfig.ts           # Event constants
+├── docs/                        # Documentation
+│   ├── README.md                # This file
+│   ├── CHANGELOG.md             # Version history
+│   ├── architecture_v1.0.0.md   # Architecture docs
+│   ├── api_v1.0.0.md            # API documentation
+│   ├── SETUP.md                 # Setup guide
+│   └── FINAL-SUMMARY-v1.1.4.md  # Production summary
+├── public/                      # Static assets
+│   └── ...
+├── .env.local                   # Environment variables (gitignored)
+├── .env.local.example           # Environment template
+├── next.config.js               # Next.js config
+├── postcss.config.mjs           # PostCSS config (Tailwind v4)
+├── tsconfig.json                # TypeScript config
+└── package.json                 # Dependencies
+```
+chakravyuha/
+├── app/                          # Next.js App Router
+│   ├── layout.tsx               # Root layout with fonts
+│   ├── page.tsx                 # Home page
 │   ├── globals.css              # Global styles
 │   ├── themes/
 │   │   └── page.tsx             # Themes page
@@ -246,7 +312,7 @@ See [`/docs/architecture_v1.0.0.md`](./architecture_v1.0.0.md) for system archit
 
 See [`/docs/CHANGELOG.md`](./CHANGELOG.md) for version history.
 
-**Current Version**: v1.0.0
+**Current Version**: v1.1.4
 
 ---
 

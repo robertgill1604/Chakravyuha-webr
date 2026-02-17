@@ -2,7 +2,7 @@
 
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
-import { CheckCircle, Clock, Award, Users, FileText, Lightbulb, AlertTriangle } from "lucide-react";
+import { CheckCircle, Clock, Award, Users, FileText, Lightbulb, AlertTriangle, Coffee, Bed } from "lucide-react";
 
 export default function GuidelinesPage() {
   return (
@@ -88,9 +88,9 @@ export default function GuidelinesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { icon: Users, title: "Team Size", desc: "2-5 members from same or different institutions" },
+                { icon: Users, title: "Team Size", desc: `${eventConfig.teamSize.min}-${eventConfig.teamSize.max} members (individual or team)` },
                 { icon: Award, title: "Institution", desc: "Open to all UG/PG students from any college" },
-                { icon: FileText, title: "Registration", desc: "Complete online registration and payment" },
+                { icon: FileText, title: "Registration", desc: `Fee: ${eventConfig.registrationFee}` },
               ].map((item, index) => (
                 <m.div
                   key={index}
@@ -210,9 +210,9 @@ export default function GuidelinesPage() {
               <div className="space-y-4">
                 {[
                   { label: "Registration Opens", date: "Now", highlight: false },
-                  { label: "Registration Deadline", date: "March 10, 2026", highlight: true },
-                  { label: "Hackathon Starts", date: "March 15, 2026", highlight: false },
-                  { label: "Results Announcement", date: "March 16, 2026", highlight: false },
+                  { label: "Registration Deadline", date: new Date(eventConfig.registrationDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: true },
+                  { label: "Hackathon Starts", date: new Date(eventConfig.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: false },
+                  { label: "Results Announcement", date: "March 28, 2026", highlight: false },
                 ].map((item, index) => (
                   <m.div
                     key={index}
@@ -229,6 +229,60 @@ export default function GuidelinesPage() {
                   </m.div>
                 ))}
               </div>
+            </div>
+          </m.div>
+
+          {/* Accommodation */}
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-[#00ff88]/20 flex items-center justify-center">
+                <Bed className="w-6 h-6 text-[#00ff88]" />
+              </div>
+              <h2 className="text-2xl font-bold text-white">Accommodation & Facilities</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <m.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0 }}
+                className="p-6 rounded-xl bg-[#111827]/50 border border-white/[0.06]"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <Coffee className="w-6 h-6 text-[#00ff88]" />
+                  <h3 className="font-semibold text-white">Food & Beverages</h3>
+                </div>
+                <p className="text-white/60">
+                  {eventConfig.accommodation.foodProvided 
+                    ? "Complimentary meals and refreshments provided throughout the event" 
+                    : "Not provided"}
+                </p>
+              </m.div>
+
+              <m.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="p-6 rounded-xl bg-[#111827]/50 border border-white/[0.06]"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <Bed className="w-6 h-6 text-[#00ff88]" />
+                  <h3 className="font-semibold text-white">Resting Room</h3>
+                </div>
+                <p className="text-white/60">
+                  {eventConfig.accommodation.restingRoom.available 
+                    ? `${eventConfig.accommodation.restingRoom.purpose}. ${eventConfig.accommodation.arrivalRequirement}` 
+                    : "Not available"}
+                </p>
+              </m.div>
             </div>
           </m.div>
         </div>

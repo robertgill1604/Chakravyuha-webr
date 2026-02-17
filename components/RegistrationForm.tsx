@@ -33,6 +33,73 @@ export function RegistrationForm() {
     setTimeout(() => setShakeField(null), 500);
   };
 
+  const handleManualSubmit = async () => {
+    console.log('Manual submit clicked');
+    const data = watch();
+    console.log('Form data:', JSON.stringify(data, null, 2));
+    
+    if (!data.pptLink) {
+      setErrorMessage("Please provide a presentation link");
+      triggerShake("pptLink");
+      return;
+    }
+
+    if (!data.teamName || !data.leaderName || !data.email || !data.phone) {
+      setErrorMessage("Please fill in all required fields");
+      console.log('Validation failed - missing required fields');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    try {
+      console.log('Starting API call...');
+      const formData = new FormData();
+      formData.append("teamName", data.teamName || "");
+      formData.append("college", data.college || "");
+      formData.append("leaderName", data.leaderName || "");
+      formData.append("email", data.email || "");
+      formData.append("phone", data.phone || "");
+      formData.append("memberCount", (data.memberCount || 1).toString());
+      formData.append("theme", data.theme || "");
+      formData.append("projectTitle", data.projectTitle || "");
+      formData.append("abstract", data.abstract || "");
+      formData.append("pptLink", data.pptLink || "");
+      formData.append("members", JSON.stringify(data.members || []));
+      formData.append("honeypot", "");
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+      const response = await fetch("/api/register", {
+        method: "POST",
+        body: formData,
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+      console.log('API call completed');
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setRegistrationId(result.registrationId);
+        reset();
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(result.message || "Registration failed. Please try again.");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setErrorMessage("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const onSubmit = async (data: RegistrationFormData) => {
     if (!data.pptLink) {
       setErrorMessage("Please provide a presentation link");
@@ -132,7 +199,9 @@ export function RegistrationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <>
+    <form id="registration-form" style={{ overflow: 'visible' }}>
+      <div className="space-y-6">
       {/* Accommodation Info */}
       {eventConfig.accommodation.foodProvided && (
         <div className="bg-gradient-to-r from-[#22D3EE]/10 to-[#A855F7]/10 border border-[#22D3EE]/20 rounded-xl p-5">
@@ -403,42 +472,30 @@ export function RegistrationForm() {
         <p className="mt-1 text-xs text-white/40">Upload your PPT/PDF to Google Drive or Dropbox and paste the link here</p>
       </InputField>
 
-      {/* Honeypot Field */}
-      <input
-        {...register("honeypot")}
-        type="text"
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-      />
-
       {/* Submit Button */}
-      <m.button
-        type="submit"
+      <button
+        type="button"
         disabled={isSubmitting}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        className="w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-white font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden text-sm sm:text-base"
+        onClick={handleManualSubmit}
+        className="w-full py-4 px-6 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-white font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 text-base cursor-pointer"
+        style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
       >
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] via-[#2563EB] to-[#3B82F6] bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite] opacity-0 hover:opacity-100 transition-opacity" />
-        
-        <span className="relative z-10 flex items-center gap-2">
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
-              <span className="text-sm sm:text-base">Submitting...</span>
-            </>
-          ) : (
-            "Submit Registration"
-          )}
-        </span>
-      </m.button>
+        {isSubmitting ? (
+          <>
+            <Loader2 className="w-5 h-5 animate-spin" />
+            <span>Submitting...</span>
+          </>
+        ) : (
+          "Submit Registration"
+        )}
+      </button>
 
       <p className="text-sm text-white/40 text-center">
         By registering, you agree to follow the hackathon guidelines.
       </p>
+      </div>
     </form>
+    </>
   );
 }
 

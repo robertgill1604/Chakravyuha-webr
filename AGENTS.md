@@ -261,6 +261,8 @@ All docs are in `/docs`:
 - `REDESIGN-v1.1.0.md` - Design decisions
 - `FINAL-SUMMARY-v1.1.4.md` - Production summary
 - `DEV-LOG-2026-02-16.md` - Development log
+- `DEV-LOG-2026-02-17.md` - Latest development log
+- `UI.md` - Comprehensive UI/UX documentation
 
 ## When Helping Me
 
@@ -292,6 +294,6 @@ pretty                # Format code
 
 ---
 
-**Last Updated**: 2026-02-16  
+**Last Updated**: 2026-02-17  
 **skills.sh Location**: ~/skills.sh  
 **Project Root**: C:\Users\aswin-kumar-s\Documents\Programs\Web\Chakravyuha
