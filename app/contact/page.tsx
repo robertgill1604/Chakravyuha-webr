@@ -2,7 +2,7 @@
 
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
-import { Mail, Phone, MapPin, HelpCircle, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, HelpCircle, MessageCircle, ExternalLink } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -99,13 +99,21 @@ export default function ContactPage() {
 
                   {/* Venue */}
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#00d4ff]" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#00ff88]/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#00ff88]" />
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Venue</h3>
                       <p className="text-white/60 text-xs sm:text-sm break-words">{eventConfig.venue}</p>
-                      <p className="text-sm text-white/40 mt-1">Tamil Nadu, India</p>
+                      <a 
+                        href="https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[#00d4ff] text-xs sm:text-sm mt-2 hover:underline"
+                      >
+                        <span>View on Map</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
                 </div>

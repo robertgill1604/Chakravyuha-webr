@@ -161,7 +161,7 @@ export function Footer() {
             <ul className="space-y-3 sm:space-y-4">
               {[
                 { icon: MapPin, text: "JJ College of Engineering and Technology (Autonomous), Trichy", color: "#00ff88", link: "https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" },
-                { icon: Phone, text: `Student Coordinator ${eventConfig.contact.studentCoordinator.name}: ${eventConfig.contact.studentCoordinator.phone}`, color: "#00d4ff" },
+                { icon: Phone, label: "Student Coordinator", subtext: `${eventConfig.contact.studentCoordinator.name} - ${eventConfig.contact.studentCoordinator.phone}`, color: "#00d4ff" },
                 { icon: Mail, text: eventConfig.contact.studentCoordinator.email || "contact@chakravyuha.in", color: "#a855f7" },
               ].map((item, index) => (
                 <m.li 
@@ -186,18 +186,25 @@ export function Footer() {
                   >
                     <item.icon className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: item.color }} />
                   </m.div>
-                  {item.link ? (
-                    <a 
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2 hover:text-[#00ff88] transition-colors"
-                    >
-                      {item.text}
-                    </a>
-                  ) : (
-                    <span className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2">{item.text}</span>
-                  )}
+                  <div className="min-w-0">
+                    {"label" in item && item.label ? (
+                      <>
+                        <p className="text-white/40 text-[10px] sm:text-xs">{item.label}</p>
+                        <p className="text-white/60 text-xs sm:text-sm break-words">{item.subtext}</p>
+                      </>
+                    ) : item.link ? (
+                      <a 
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2 hover:text-[#00ff88] transition-colors block"
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      <span className="text-white/60 text-xs sm:text-sm pt-1.5 sm:pt-2 block">{item.text}</span>
+                    )}
+                  </div>
                 </m.li>
               ))}
             </ul>
