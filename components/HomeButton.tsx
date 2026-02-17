@@ -45,7 +45,7 @@ export function HomeButton() {
         animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.8 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-24 sm:bottom-6 left-6 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-[#00ff88] to-[#22D3EE] text-white flex items-center justify-center shadow-lg shadow-[#00ff88]/30 hover:shadow-[#00ff88]/50 transition-all pointer-events-none"
+        className="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-[#00ff88] to-[#22D3EE] text-white flex items-center justify-center shadow-lg shadow-[#00ff88]/30 hover:shadow-[#00ff88]/50 transition-all pointer-events-none"
         style={{ pointerEvents: visible ? "auto" : "none" }}
         aria-label="Go to Home"
       >
