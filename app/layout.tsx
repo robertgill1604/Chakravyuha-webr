@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnMount } from "@/components/ScrollToTopOnMount";
 import { HomeButton } from "@/components/HomeButton";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <MotionProvider>
           <SmoothScrollProvider>
             <Navbar />
+            <ScrollProgress />
             <main className="min-h-screen">
               {children}
             </main>
