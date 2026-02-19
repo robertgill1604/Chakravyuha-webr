@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## v1.0.0 - 2026-02-16
+## v1.1.5 - 2026-02-19
+
+### Changed
+- Event date: March 27 → March 18, 2026
+- Registration deadline: March 25 → March 15, 2026
+- Timeline updated to March 18-19, 2026
+
+---
+
+## v1.1.4 - 2026-02-17
 
 ### Added
 - Initial project structure with Next.js 15 and TypeScript
