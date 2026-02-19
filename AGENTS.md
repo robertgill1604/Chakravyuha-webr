@@ -8,7 +8,7 @@
 **Chakravyuha 2026** is a production-grade institutional hackathon website for JJCET's State Level 24-Hour Innovation Sprint.
 
 - **Current Version**: v1.1.4 (Production-Ready)
-- **Event Date**: March 15, 2026
+- **Event Date**: March 18, 2026
 - **Tech Stack**: Next.js 16 + React 19 + TypeScript 5 + Tailwind CSS 4
 
 ## Developer Skills & Aliases

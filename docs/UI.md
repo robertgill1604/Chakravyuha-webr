@@ -610,8 +610,8 @@ Tailwind CSS v4 breakpoints:
 
 | Day | Color Assignment |
 |-----|-----------------|
-| March 15 (Day 1) | Green → Blue → Purple (cycling) |
-| March 16 (Day 2) | Gold (final day highlight) |
+| March 18 (Day 1) | Green → Blue → Purple (cycling) |
+| March 19 (Day 2) | Gold (final day highlight) |
 
 **Card Design**:
 - Background: Color at 10% opacity

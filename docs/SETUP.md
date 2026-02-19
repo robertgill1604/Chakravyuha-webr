@@ -155,9 +155,9 @@ Your `.env.local` file has been created with:
 - **GOOGLE_SHEET_ID:** `YOUR_SHEET_ID_HERE` ← **YOU NEED TO FILL THIS**
 - **RATE_LIMIT_MAX:** 3
 - **RATE_LIMIT_WINDOW_MS:** 600000
-- **EVENT_DATE:** 2026-03-15T09:00:00
+- **EVENT_DATE:** 2026-03-18T09:00:00
 - **EVENT_VENUE:** JJCET Campus, Trichy
-- **REGISTRATION_DEADLINE:** 2026-03-10T23:59:59
+- **REGISTRATION_DEADLINE:** 2026-03-15T23:59:59
 
 ### What You Need to Do:
 
@@ -290,7 +290,7 @@ In Vercel project settings:
 | GOOGLE_SHEET_ID | your-sheet-id |
 | RATE_LIMIT_MAX | 3 |
 | RATE_LIMIT_WINDOW_MS | 600000 |
-| EVENT_DATE | 2026-03-15T09:00:00 |
+| EVENT_DATE | 2026-03-18T09:00:00 |
 | EVENT_VENUE | JJCET Campus, Trichy |
 
 **Important:**

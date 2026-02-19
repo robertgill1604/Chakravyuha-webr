@@ -5,9 +5,9 @@ export const eventConfig = {
   organizer: "JJ College Engineering and Technology (Autonomous)",
   group: "Sowdambikaa Group of Institutions",
   accreditation: ["NAAC 'A' Grade", "NBA", "Autonomous"],
-  date: process.env.EVENT_DATE || "2026-03-27",
+  date: process.env.EVENT_DATE || "2026-03-18",
   venue: process.env.EVENT_VENUE || "JJ College of Engineering and Technology (Autonomous) Campus, Trichy",
-  registrationDeadline: process.env.REGISTRATION_DEADLINE || "2026-03-25",
+  registrationDeadline: process.env.REGISTRATION_DEADLINE || "2026-03-15",
   
   contact: {
     facultyCoordinator: {
@@ -78,61 +78,61 @@ export const eventConfig = {
 
   timeline: [
     {
-      date: "March 27, 2026",
+      date: "March 18, 2026",
       time: "09:00 AM",
       title: "Registration & Check-in",
       description: "Team registration verification and welcome kit distribution",
     },
     {
-      date: "March 27, 2026",
+      date: "March 18, 2026",
       time: "10:00 AM",
       title: "Opening Ceremony",
       description: "Inauguration and briefing about rules and guidelines",
     },
     {
-      date: "March 27, 2026",
+      date: "March 18, 2026",
       time: "11:00 AM",
       title: "Hackathon Begins",
       description: "Coding starts! Teams begin working on their projects",
     },
     {
-      date: "March 27, 2026",
+      date: "March 18, 2026",
       time: "02:00 PM",
       title: "Lunch Break",
       description: "Networking lunch and team interactions",
     },
     {
-      date: "March 27, 2026",
+      date: "March 18, 2026",
       time: "08:00 PM",
       title: "Dinner & Check-in",
       description: "Progress review and mentor feedback session",
     },
     {
-      date: "March 28, 2026",
+      date: "March 19, 2026",
       time: "12:00 AM",
       title: "Midnight Snacks",
       description: "Energy boost for late-night coding",
     },
     {
-      date: "March 28, 2026",
+      date: "March 19, 2026",
       time: "08:00 AM",
       title: "Breakfast",
       description: "Morning refreshments and final sprint preparation",
     },
     {
-      date: "March 28, 2026",
+      date: "March 19, 2026",
       time: "11:00 AM",
       title: "Submission Deadline",
       description: "All projects must be submitted with presentation",
     },
     {
-      date: "March 28, 2026",
+      date: "March 19, 2026",
       time: "11:30 AM",
       title: "Project Presentations",
       description: "Teams present their solutions to judges",
     },
     {
-      date: "March 28, 2026",
+      date: "March 19, 2026",
       time: "02:00 PM",
       title: "Prize Distribution",
       description: "Winners announcement and closing ceremony",

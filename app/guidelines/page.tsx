@@ -212,7 +212,7 @@ export default function GuidelinesPage() {
                   { label: "Registration Opens", date: "Now", highlight: false },
                   { label: "Registration Deadline", date: new Date(eventConfig.registrationDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: true },
                   { label: "Hackathon Starts", date: new Date(eventConfig.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: false },
-                  { label: "Results Announcement", date: "March 28, 2026", highlight: false },
+                  { label: "Results Announcement", date: "March 19, 2026", highlight: false },
                 ].map((item, index) => (
                   <m.div
                     key={index}
