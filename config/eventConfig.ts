@@ -78,13 +78,13 @@ export const eventConfig = {
   timeline: [
     {
       date: "March 18, 2026",
-      time: "09:00 AM",
+      time: "11:00 AM",
       title: "Registration & Check-in",
       description: "Team registration verification and welcome kit distribution",
     },
     {
       date: "March 18, 2026",
-      time: "10:00 AM",
+      time: "11:00 AM",
       title: "Opening Ceremony",
       description: "Inauguration and briefing about rules and guidelines",
     },
