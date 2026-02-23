@@ -15,7 +15,7 @@ export const eventConfig = {
       phone: "8883183512",
     },
     studentCoordinator: {
-      name: "P Ayyappan",
+      name: "Mr P Ayyappan BE CSE II Year",
       phone: "9042143286",
       email: "ayyappan.p1208@gmail.com",
     },
