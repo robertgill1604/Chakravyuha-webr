@@ -130,12 +130,6 @@ export const eventConfig = {
       title: "Project Presentations",
       description: "Teams present their solutions to judges",
     },
-    {
-      date: "March 19, 2026",
-      time: "02:00 PM",
-      title: "Prize Distribution",
-      description: "Winners announcement and closing ceremony",
-    },
   ],
 
   facilities: [
