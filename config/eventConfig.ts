@@ -23,7 +23,6 @@ export const eventConfig = {
 
   accommodation: {
     foodProvided: true,
-    arrivalRequirement: "Participants must arrive on campus 1 day prior to the event",
     restingRoom: {
       available: true,
       separate: true,
