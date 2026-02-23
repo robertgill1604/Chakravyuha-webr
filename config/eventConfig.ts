@@ -173,7 +173,6 @@ export const eventConfig = {
 
   guidelines: [
     "Teams can have 1-3 members (individual or team participation allowed)",
-    "All code must be written during the hackathon. Pre-written code is not allowed",
     "Teams can use open-source libraries and APIs",
     "Each team must submit a working prototype and presentation link",
     "Plagiarism will result in immediate disqualification",
