@@ -218,19 +218,6 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <m.p 
-            className="text-center text-white/40 text-xs sm:text-sm flex items-center justify-center gap-1"
-            whileHover={{ scale: 1.02 }}
-          >
-            Made with 
-            <m.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-[#00ff88] fill-[#00ff88]" />
-            </m.span>
-            for innovation
-          </m.p>
         </m.div>
       </div>
     </footer>
