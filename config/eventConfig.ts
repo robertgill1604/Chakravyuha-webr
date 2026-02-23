@@ -11,7 +11,7 @@ export const eventConfig = {
   
   contact: {
     facultyCoordinator: {
-      name: "S Narayanasamy B.E., M.E., (Ph.D)",
+      name: "Mr S Narayanasamy B.E., M.E., (Ph.D)",
       phone: "8883183512",
     },
     studentCoordinator: {
