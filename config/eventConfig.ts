@@ -78,13 +78,13 @@ export const eventConfig = {
   timeline: [
     {
       date: "March 18, 2026",
-      time: "11:00 AM",
+      time: "09:00 AM",
       title: "Registration & Check-in",
       description: "Team registration verification and welcome kit distribution",
     },
     {
       date: "March 18, 2026",
-      time: "11:00 AM",
+      time: "10:00 AM",
       title: "Opening Ceremony",
       description: "Inauguration and briefing about rules and guidelines",
     },
@@ -120,15 +120,15 @@ export const eventConfig = {
     },
     {
       date: "March 19, 2026",
-      time: "11:00 AM",
-      title: "Submission Deadline",
-      description: "All projects must be submitted with presentation",
+      time: "10:00 AM",
+      title: "Project Presentations",
+      description: "Teams present their solutions to judges",
     },
     {
       date: "March 19, 2026",
-      time: "11:30 AM",
-      title: "Project Presentations",
-      description: "Teams present their solutions to judges",
+      time: "11:00 AM",
+      title: "Submission Deadline",
+      description: "All projects must be submitted with presentation",
     },
   ],
 
