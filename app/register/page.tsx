@@ -1,26 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
-import { AlertCircle, Lock, ArrowRight } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 
 export default function RegisterPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [accessCode, setAccessCode] = useState("");
-  const [error, setError] = useState("");
-
-  const handleAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (accessCode === "CHAK2026" || accessCode === "chak2026") {
-      setIsAuthenticated(true);
-      setError("");
-    } else {
-      setError("Invalid access code");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#070B14]">
       {/* Hero Section */}
@@ -53,69 +38,20 @@ export default function RegisterPage() {
       {/* Registration Form */}
       <section className="py-12 bg-[#0B1220]">
         <div className="max-w-[760px] mx-auto px-6 lg:px-8">
-          {!isAuthenticated ? (
-            <m.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative p-8 md:p-10 rounded-2xl bg-gradient-to-br from-[#111827]/90 to-[#0B1220]/90 backdrop-blur-xl border border-white/[0.06]"
-            >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl -translate-y-1/2" />
-              
-              <div className="relative z-10 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#00ff88]/10 flex items-center justify-center">
-                  <Lock className="w-8 h-8 text-[#00ff88]" />
-                </div>
-                <h2 className="text-2xl font-bold text-white mb-2">
-                  Access Required
-                </h2>
-                <p className="text-white/60 mb-8">
-                  Enter the access code to register for the hackathon
-                </p>
-
-                <form onSubmit={handleAuth} className="space-y-4">
-                  <input
-                    type="text"
-                    value={accessCode}
-                    onChange={(e) => setAccessCode(e.target.value.toUpperCase())}
-                    placeholder="Enter access code"
-                    className="w-full px-4 py-3 rounded-xl bg-[#1F2937]/50 border border-white/[0.1] text-white placeholder-white/40 focus:outline-none focus:border-[#00ff88]/50 focus:ring-1 focus:ring-[#00ff88]/20 transition-all text-center text-lg tracking-widest"
-                  />
-                  
-                  {error && (
-                    <p className="text-red-400 text-sm">{error}</p>
-                  )}
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-[#070B14] font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#00ff88]/20 transition-all"
-                  >
-                    Continue
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-
-                <p className="text-white/40 text-xs mt-6">
-                  Contact student coordinator for access code
-                </p>
-              </div>
-            </m.div>
-          ) : (
-            <m.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative p-6 md:p-10 rounded-2xl bg-gradient-to-br from-[#111827]/90 to-[#0B1220]/90 backdrop-blur-xl border border-white/[0.06]"
-              style={{ overflow: 'visible' }}
-            >
-              {/* Glow Effect */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl -translate-y-1/2" />
-              
-              <div className="relative z-10">
-                <RegistrationForm />
-              </div>
-            </m.div>
-          )}
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative p-6 md:p-10 rounded-2xl bg-gradient-to-br from-[#111827]/90 to-[#0B1220]/90 backdrop-blur-xl border border-white/[0.06]"
+            style={{ overflow: 'visible' }}
+          >
+            {/* Glow Effect */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl -translate-y-1/2" />
+            
+            <div className="relative z-10">
+              <RegistrationForm />
+            </div>
+          </m.div>
 
           {/* Payment Info */}
           <m.div
