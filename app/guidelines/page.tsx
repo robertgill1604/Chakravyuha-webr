@@ -128,7 +128,6 @@ export default function GuidelinesPage() {
               {[
                 { step: 1, title: "Working Prototype", desc: "Submit a functional prototype with well-documented, runnable code" },
                 { step: 2, title: "Presentation", desc: "Prepare a 5-minute presentation covering problem, solution, and demo" },
-                { step: 3, title: "Documentation", desc: "Include README with setup instructions and team contributions" },
               ].map((item, index) => (
                 <m.div
                   key={index}
