@@ -134,12 +134,6 @@ export const eventConfig = {
     },
     {
       date: "March 19, 2026",
-      time: "07:30 AM",
-      title: "Breakfast",
-      description: "Morning refreshments and final sprint preparation",
-    },
-    {
-      date: "March 19, 2026",
       time: "08:00 AM",
       title: "Project Presentations",
       description: "Teams present their solutions to judges",

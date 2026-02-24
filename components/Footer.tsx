@@ -112,6 +112,8 @@ export function Footer() {
             </m.h4>
             <ul className="space-y-2 sm:space-y-3">
               {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
                 { label: "Themes", href: "/themes" },
                 { label: "Register", href: "/register" },
                 { label: "Guidelines", href: "/guidelines" },
