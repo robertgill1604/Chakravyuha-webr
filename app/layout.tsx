@@ -8,7 +8,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnMount } from "@/components/ScrollToTopOnMount";
 import { HomeButton } from "@/components/HomeButton";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { CursorEffect } from "@/components/effects/CursorEffect";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -35,7 +34,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="font-sans bg-[#070B14] text-white antialiased">
         <ScrollToTopOnMount />
-        <CursorEffect />
         <MotionProvider>
           <SmoothScrollProvider>
             <Navbar />

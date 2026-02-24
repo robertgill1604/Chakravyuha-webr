@@ -151,7 +151,7 @@ export default function ContactPage() {
                     },
                     {
                       q: "How do I form a team?",
-                      a: "You can form teams with friends or classmates. Teams can have 1-3 members. All team members must register individually and mention the same team name.",
+                      a: "Only the team leader needs to register with all team member details. Teams can have 1-3 members. The leader will fill in all member information during registration.",
                     },
                     {
                       q: "What should I bring?",
