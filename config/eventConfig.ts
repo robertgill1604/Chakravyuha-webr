@@ -7,7 +7,9 @@ export const eventConfig = {
   accreditation: ["NAAC 'A' Grade", "NBA", "Autonomous"],
   date: process.env.EVENT_DATE || "2026-03-18",
   venue: process.env.EVENT_VENUE || "JJ College of Engineering and Technology (Autonomous) Campus, Trichy",
-  registrationDeadline: process.env.REGISTRATION_DEADLINE || "2026-03-15",
+  registrationDeadline: process.env.REGISTRATION_DEADLINE || "2026-03-10",
+  shortlistDate: "2026-03-11",
+  paymentDeadline: "2026-03-15",
   
   contact: {
     facultyCoordinator: {
@@ -76,6 +78,24 @@ export const eventConfig = {
   ],
 
   timeline: [
+    {
+      date: "March 10, 2026",
+      time: "11:59 PM",
+      title: "Registration Deadline",
+      description: "Last date to submit your team registration",
+    },
+    {
+      date: "March 11, 2026",
+      time: "All Day",
+      title: "Shortlist Announcement",
+      description: "Shortlisted teams will be informed via team leader's email",
+    },
+    {
+      date: "March 15, 2026",
+      time: "11:59 PM",
+      title: "Payment Deadline",
+      description: "Last date to complete payment for shortlisted teams",
+    },
     {
       date: "March 18, 2026",
       time: "09:00 AM",
@@ -172,11 +192,10 @@ export const eventConfig = {
     "Plagiarism will result in immediate disqualification",
     "Decision of judges is final and binding",
     "Participants must bring their own laptops and necessary equipment",
-    "Registration fee must be paid before the deadline",
   ],
 
   prizes: {
-    first: "₹20,000",
+    first: "₹25,000",
     second: "₹10,000",
     third: "₹5,000",
     consolation: 5,

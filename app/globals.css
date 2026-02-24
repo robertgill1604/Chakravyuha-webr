@@ -500,3 +500,17 @@ html.lenis {
   background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
               linear-gradient(90deg, var(--ocean-teal), var(--ocean-blue), var(--ocean-cyan)) border-box;
 }
+
+/* Marquee Animation - Seamless Loop */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}

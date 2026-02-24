@@ -67,6 +67,22 @@ export const registrationSchema = z.object({
   
   members: z.array(memberSchema).min(0).max(2, "Maximum 2 additional members"),
   
+  mentorName: z
+    .string()
+    .min(3, "Mentor name must be at least 3 characters")
+    .max(50, "Mentor name must be less than 50 characters")
+    .regex(/^[a-zA-Z\s]+$/, "Name can only contain letters and spaces"),
+  
+  mentorPhone: z
+    .string()
+    .min(10, "Mentor phone must be 10 digits")
+    .max(10, "Mentor phone must be 10 digits")
+    .regex(/^\d{10}$/, "Mentor phone number must be exactly 10 digits"),
+  
+  mentorEmail: z
+    .string()
+    .email("Invalid mentor email address"),
+  
   honeypot: z
     .string()
     .max(0, "Spam detected")

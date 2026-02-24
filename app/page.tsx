@@ -32,6 +32,46 @@ export default function Home() {
     <div className="bg-[#070B14]">
       <Hero />
 
+      {/* Registration Open Notice - Home Only */}
+      <div className="bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#a855f7]/10 border-b border-[#00ff88]/20 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap py-2.5">
+          {/* First Copy */}
+          <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
+            <span className="text-[#00ff88]">Registration Open Now!</span>
+            <span className="text-white/60">|</span>
+            <span className="text-white">Last Date:</span>
+            <span className="text-[#ff6b35]">March 10, 2026</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00d4ff]">Shortlist:</span>
+            <span className="text-white">March 11</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00ff88]">Event Date:</span>
+            <span className="text-white">March 18-19, 2026</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00d4ff] underline underline-offset-2">Click to Register Now!</span>
+            <span className="text-white/40 mx-4">•••</span>
+          </a>
+          {/* Second Copy - Seamless Loop */}
+          <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
+            <span className="text-[#00ff88]">Registration Open Now!</span>
+            <span className="text-white/60">|</span>
+            <span className="text-white">Last Date:</span>
+            <span className="text-[#ff6b35]">March 10, 2026</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00d4ff]">Shortlist:</span>
+            <span className="text-white">March 11</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00ff88]">Event Date:</span>
+            <span className="text-white">March 18-19, 2026</span>
+            <span className="text-white/60">|</span>
+            <span className="text-[#00d4ff] underline underline-offset-2">Click to Register Now!</span>
+            <span className="text-white/40 mx-4">•••</span>
+          </a>
+        </div>
+      </div>
+
       {/* Stats Section */}
       <section className="relative py-10 sm:py-20 bg-[#0B1220] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#070B14] via-transparent to-[#070B14]" />
@@ -65,7 +105,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#D4AF37]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Gift className="w-4 h-4 sm:w-6 sm:h-6 text-[#D4AF37] mb-1 sm:mb-2" />
               <div className="text-sm sm:text-xl font-bold text-[#D4AF37] mb-0.5">
-                <AnimatedCounter target="₹35,000" prefix="₹" suffix="+" duration={2} />
+                <AnimatedCounter target="₹40,000" prefix="₹" suffix="+" duration={2} />
               </div>
               <div className="text-white/60 text-[10px] sm:text-xs">Total Prize Pool</div>
             </m.div>
@@ -121,7 +161,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#ff6b35]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Clock className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b35] mb-1 sm:mb-2" />
               <div className="text-sm sm:text-xl font-bold text-white mb-0.5">
-                {new Date(eventConfig.registrationDeadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                Mar 10
               </div>
               <div className="text-white/60 text-[10px] sm:text-xs">Registration Deadline</div>
             </m.div>

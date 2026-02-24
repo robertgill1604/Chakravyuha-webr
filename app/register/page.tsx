@@ -66,6 +66,27 @@ export default function RegisterPage() {
               </p>
             </div>
 
+            <div className="p-4 rounded-xl bg-gradient-to-br from-[#a855f7]/10 to-[#a855f7]/5 border border-[#a855f7]/20">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-[#a855f7]/20 flex items-center justify-center flex-shrink-0">
+                  <AlertCircle className="w-5 h-5 text-[#a855f7]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#a855f7] mb-2">
+                    Shortlist & Payment Process
+                  </h3>
+                  <p className="text-white/60 text-sm mb-2 leading-relaxed">
+                    After registration, teams will be <span className="text-white font-semibold">shortlisted</span> based on their abstract. 
+                    Shortlisted teams will be informed through <span className="text-[#a855f7]">team leader&apos;s email</span> on{' '}
+                    <span className="text-white font-semibold">{new Date(eventConfig.shortlistDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>.
+                  </p>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    Complete payment before <span className="text-white font-semibold">{new Date(eventConfig.paymentDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span> to confirm your spot.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="p-6 rounded-xl bg-gradient-to-br from-[#D4AF37]/10 to-[#D4AF37]/5 border border-[#D4AF37]/20">
                 <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 flex items-center justify-center flex-shrink-0">

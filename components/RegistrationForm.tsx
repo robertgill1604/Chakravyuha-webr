@@ -21,6 +21,7 @@ export function RegistrationForm() {
     formState: { errors },
     reset,
     watch,
+    trigger,
   } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema),
   });
@@ -34,19 +35,26 @@ export function RegistrationForm() {
   };
 
   const handleManualSubmit = async () => {
-    console.log('Manual submit clicked');
     const data = watch();
-    console.log('Form data:', JSON.stringify(data, null, 2));
     
-    if (!data.pptLink) {
-      setErrorMessage("Please provide a presentation link");
-      triggerShake("pptLink");
+    const isValid = await trigger();
+    
+    if (!isValid) {
+      setErrorMessage("Please fill in all required fields correctly");
+      if (!data.pptLink) triggerShake("pptLink");
+      if (!data.mentorName) triggerShake("mentorName");
+      if (!data.mentorPhone) triggerShake("mentorPhone");
+      if (!data.mentorEmail) triggerShake("mentorEmail");
+      if (!data.teamName) triggerShake("teamName");
+      if (!data.leaderName) triggerShake("leaderName");
+      if (!data.email) triggerShake("email");
+      if (!data.phone) triggerShake("phone");
       return;
     }
 
-    if (!data.teamName || !data.leaderName || !data.email || !data.phone) {
-      setErrorMessage("Please fill in all required fields");
-      console.log('Validation failed - missing required fields');
+    if (!data.pptLink) {
+      setErrorMessage("Please provide a presentation link");
+      triggerShake("pptLink");
       return;
     }
 
@@ -68,6 +76,9 @@ export function RegistrationForm() {
       formData.append("abstract", data.abstract || "");
       formData.append("pptLink", data.pptLink || "");
       formData.append("members", JSON.stringify(data.members || []));
+      formData.append("mentorName", data.mentorName || "");
+      formData.append("mentorPhone", data.mentorPhone || "");
+      formData.append("mentorEmail", data.mentorEmail || "");
       formData.append("honeypot", "");
 
       const controller = new AbortController();
@@ -80,7 +91,6 @@ export function RegistrationForm() {
       });
 
       clearTimeout(timeoutId);
-      console.log('API call completed');
 
       const result = await response.json();
 
@@ -124,6 +134,9 @@ export function RegistrationForm() {
       formData.append("abstract", data.abstract);
       formData.append("pptLink", data.pptLink);
       formData.append("members", JSON.stringify(data.members));
+      formData.append("mentorName", data.mentorName || "");
+      formData.append("mentorPhone", data.mentorPhone || "");
+      formData.append("mentorEmail", data.mentorEmail || "");
       formData.append("honeypot", "");
 
       const response = await fetch("/api/register", {
@@ -407,6 +420,56 @@ export function RegistrationForm() {
         )}
       </AnimatePresence>
 
+      {/* Mentor Information */}
+      <div className="p-4 rounded-xl bg-gradient-to-r from-[#a855f7]/10 to-[#22D3EE]/10 border border-[#a855f7]/20">
+        <h3 className="text-lg font-semibold text-white mb-1">Mentor Details</h3>
+        <p className="text-sm text-white/50 mb-4">Add your team mentor's information</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <InputField
+            label="Mentor Name"
+            error={errors.mentorName?.message}
+            shake={shakeField === "mentorName"}
+            required
+          >
+            <input
+              {...register("mentorName")}
+              type="text"
+              className="w-full bg-[#070B14] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[#a855f7] focus:ring-2 focus:ring-[#a855f7]/20 outline-none transition-all duration-300"
+              placeholder="Mentor's full name"
+            />
+          </InputField>
+          
+          <InputField
+            label="Mentor Phone"
+            error={errors.mentorPhone?.message}
+            shake={shakeField === "mentorPhone"}
+            required
+          >
+            <input
+              {...register("mentorPhone")}
+              type="tel"
+              maxLength={10}
+              className="w-full bg-[#070B14] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[#a855f7] focus:ring-2 focus:ring-[#a855f7]/20 outline-none transition-all duration-300"
+              placeholder="9876543210"
+            />
+          </InputField>
+          
+          <InputField
+            label="Mentor Email"
+            error={errors.mentorEmail?.message}
+            shake={shakeField === "mentorEmail"}
+            required
+          >
+            <input
+              {...register("mentorEmail")}
+              type="email"
+              className="w-full bg-[#070B14] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[#a855f7] focus:ring-2 focus:ring-[#a855f7]/20 outline-none transition-all duration-300"
+              placeholder="mentor@example.com"
+            />
+          </InputField>
+        </div>
+      </div>
+
       {/* Theme Selection */}
       <InputField
         label="Select Theme"
@@ -518,7 +581,11 @@ function InputField({
         {label} {required && <span className="text-red-400">*</span>}
       </label>
       {children}
-      {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+      {error && (
+        <p className="mt-2 text-sm text-red-400 font-medium bg-red-500/10 px-3 py-2 rounded-lg border border-red-500/20">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

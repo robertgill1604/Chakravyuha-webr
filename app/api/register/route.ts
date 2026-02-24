@@ -33,6 +33,9 @@ async function appendToSheet(data: {
   leaderPhone: string;
   memberCount: number;
   members: string;
+  mentorName: string;
+  mentorPhone: string;
+  mentorEmail: string;
   theme: string;
   projectTitle: string;
   abstract: string;
@@ -63,6 +66,9 @@ async function appendToSheet(data: {
     "Leader Phone",
     "Member Count",
     "Members",
+    "Mentor Name",
+    "Mentor Phone",
+    "Mentor Email",
     "Theme",
     "Project Title",
     "Abstract",
@@ -98,6 +104,9 @@ async function appendToSheet(data: {
           data.leaderPhone,
           data.memberCount,
           data.members,
+          sanitizeString(data.mentorName) || "N/A",
+          data.mentorPhone || "N/A",
+          data.mentorEmail || "N/A",
           data.theme,
           sanitizeString(data.projectTitle),
           sanitizeString(data.abstract),
@@ -121,6 +130,9 @@ const registrationSchema = z.object({
   abstract: z.string().min(50).max(1000),
   pptLink: z.string().url().min(1),
   members: z.string(),
+  mentorName: z.string().min(1, "Mentor name is required"),
+  mentorPhone: z.string().regex(/^\d{10}$/, "Mentor phone must be exactly 10 digits"),
+  mentorEmail: z.string().email("Invalid mentor email"),
   honeypot: z.string().max(0).optional(),
 });
 
@@ -171,6 +183,9 @@ export async function POST(request: NextRequest) {
       abstract: formData.get("abstract") as string,
       pptLink: formData.get("pptLink") as string,
       members: formData.get("members") as string,
+      mentorName: formData.get("mentorName") as string || "",
+      mentorPhone: formData.get("mentorPhone") as string || "",
+      mentorEmail: formData.get("mentorEmail") as string || "",
       honeypot,
     };
 
@@ -196,7 +211,17 @@ export async function POST(request: NextRequest) {
 
     // Generate registration ID
     const registrationId = generateRegistrationId();
-    const timestamp = new Date().toISOString();
+    const now = new Date();
+    const timestamp = now.toLocaleString('en-IN', { 
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
 
     // Format members as readable string for sheet
     const membersString = members.map((m: { name: string; email: string; phone: string }, i: number) => 
@@ -215,6 +240,9 @@ export async function POST(request: NextRequest) {
         leaderPhone: data.phone,
         memberCount: data.memberCount,
         members: membersString || "No additional members",
+        mentorName: data.mentorName || "",
+        mentorPhone: data.mentorPhone || "",
+        mentorEmail: data.mentorEmail || "",
         theme: data.theme,
         projectTitle: data.projectTitle,
         abstract: data.abstract,
