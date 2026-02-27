@@ -27,7 +27,7 @@ export function Navbar() {
       className="relative z-50 w-full bg-[#050810] border-b border-[#00ff88]/20"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 sm:h-18 items-center justify-between">
+       <div className="flex h-20 lg:h-24 items-center justify-between">
           {/* Logos Row */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
             {/* College Logo */}
@@ -56,6 +56,55 @@ export function Navbar() {
                 className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,212,255,1)] transition-all duration-300"
               />
             </m.div>
+            <m.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              className="h-10 sm:h-12 w-auto relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] blur-md opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-full" />
+              <img 
+                src="/arch-digital.jpeg" 
+                alt="Arch" 
+                className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,212,255,1)] transition-all duration-300"
+              />
+            </m.div>
+            <m.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              className="h-10 sm:h-12 w-auto relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] blur-md opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-full" />
+              <img 
+                src="/edii-tn.jpeg" 
+                alt="EDII TNLogo" 
+                className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,212,255,1)] transition-all duration-300"
+              />
+            </m.div>
+            <m.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              className="h-10 sm:h-12 w-auto relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] blur-md opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-full" />
+              <img 
+                src="/marcello-tech.jpeg" 
+                alt="IIC Logo" 
+                className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,212,255,1)] transition-all duration-300"
+              />
+            </m.div>
+            <m.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              className="h-10 sm:h-12 w-auto relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] blur-md opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-full" />
+              <img 
+                src="/startup-tn-white.png" 
+                alt="TN Logo" 
+                className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,212,255,1)] transition-all duration-300"
+              />
+            </m.div>
+
           </Link>
 
           {/* Desktop Navigation */}
