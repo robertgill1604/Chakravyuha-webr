@@ -38,7 +38,7 @@ export function Navbar() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] blur-md opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-full" />
               <img 
-                src="/College-site-logo.png" 
+                src="/jjcet-new.jpeg" 
                 alt="College Logo" 
                 className="h-full w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,255,136,0.8)] group-hover:drop-shadow-[0_0_30px_rgba(0,255,136,1)] transition-all duration-300"
               />
