@@ -21,6 +21,14 @@ export const eventConfig = {
       phone: "9042143286",
       email: "ayyappan.p1208@gmail.com",
     },
+    studentCoordinator2: {
+      name: "Ms K Krithi B.E CSE III Year",
+      phone: "9597467275",
+    },
+    studentCoordinator3: {
+      name: "Mr J Abdul Javid B.E CSE II Year",
+      phone: "9345992521",
+    },
   },
 
   accommodation: {

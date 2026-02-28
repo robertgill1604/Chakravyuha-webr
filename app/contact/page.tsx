@@ -81,6 +81,13 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-white mb-0.5 sm:mb-1 text-sm sm:text-base">Student Coordinator</h3>
                       <p className="text-white/80 text-xs sm:text-sm break-words leading-tight">{eventConfig.contact.studentCoordinator.name}</p>
                       <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.studentCoordinator.phone}</p>
+                      <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.studentCoordinator.email}</p>
+                      <p><br /> </p>
+                      <p className="text-white/80 text-xs sm:text-sm break-words leading-tight">{eventConfig.contact.studentCoordinator2.name}</p>
+                      <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.studentCoordinator2.phone}</p>
+                      <p><br /> </p>
+                      <p className="text-white/80 text-xs sm:text-sm break-words leading-tight">{eventConfig.contact.studentCoordinator3.name}</p>
+                      <p className="text-white/60 text-xs sm:text-sm">{eventConfig.contact.studentCoordinator3.phone}</p>
                       <p className="text-xs text-white/40 mt-0.5 sm:mt-1">For registration queries</p>
                     </div>
                   </div>
