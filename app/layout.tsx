@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnMount } from "@/components/ScrollToTopOnMount";
 import { HomeButton } from "@/components/HomeButton";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -46,6 +47,7 @@ export default function RootLayout({
             <HomeButton />
           </SmoothScrollProvider>
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
