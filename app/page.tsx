@@ -10,6 +10,7 @@ import { FacilitiesGrid } from "@/components/FacilitiesGrid";
 import { Countdown } from "@/components/Countdown";
 import { ThemeCard } from "@/components/ThemeCard";
 import { AnimatedCounter } from "@/components/effects/AnimatedCounter";
+import { PostponeModal } from "@/components/PostponeModal";
 import { eventConfig } from "@/config/eventConfig";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#070B14]">
+      <PostponeModal />
       <Hero />
 
       {/* Registration Open Notice - Home Only */}
@@ -37,7 +39,7 @@ export default function Home() {
         <div className="flex animate-marquee whitespace-nowrap py-2.5">
           {/* First Copy */}
           <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
+            {/* <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
             <span className="text-[#00ff88]">Registration Open Now!</span>
             <span className="text-white/60">|</span>
             <span className="text-white">Last Date:</span>
@@ -50,24 +52,46 @@ export default function Home() {
             <span className="text-white">March 18-19, 2026</span>
             <span className="text-white/60">|</span>
             <span className="text-[#00d4ff] underline underline-offset-2">Click to Register Now!</span>
-            <span className="text-white/40 mx-4">•••</span>
+            <span className="text-white/40 mx-4">•••</span> */}
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse"></span>
+<span className="text-[#00ff88]">Registration Open Now!</span>
+
+<span className="text-white/60 mx-2">|</span>
+
+<span className="text-[#00ff88]">Event Date:</span>
+
+<span className="text-red-500 text-lg font-semibold ml-2">
+The event has been postponed. New dates will be announced soon. Stay tuned for updates!
+</span>
+
+<span className="text-white/60 mx-2">|</span>
+
+<span className="text-[#00d4ff] underline underline-offset-2 cursor-pointer">
+Click to Register Now!
+</span>
+
+<span className="text-white/40 mx-4">•••</span>
           </a>
           {/* Second Copy - Seamless Loop */}
           <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
-            <span className="text-[#00ff88]">Registration Open Now!</span>
-            <span className="text-white/60">|</span>
-            <span className="text-white">Last Date:</span>
-            <span className="text-[#ff6b35]">March 10, 2026</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00d4ff]">Shortlist:</span>
-            <span className="text-white">March 11</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00ff88]">Event Date:</span>
-            <span className="text-white">March 18-19, 2026</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00d4ff] underline underline-offset-2">Click to Register Now!</span>
-            <span className="text-white/40 mx-4">•••</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse"></span>
+<span className="text-[#00ff88]">Registration Open Now!</span>
+
+<span className="text-white/60 mx-2">|</span>
+
+<span className="text-[#00ff88]">Event Date:</span>
+
+<span className="text-red-500 text-lg font-semibold ml-2">
+The event has been postponed. New dates will be announced soon. Stay tuned for updates!
+</span>
+
+<span className="text-white/60 mx-2">|</span>
+
+<span className="text-[#00d4ff] underline underline-offset-2 cursor-pointer">
+Click to Register Now!
+</span>
+
+<span className="text-white/40 mx-4">•••</span>
           </a>
         </div>
       </div>
@@ -161,7 +185,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#ff6b35]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Clock className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b35] mb-1 sm:mb-2" />
               <div className="text-sm sm:text-xl font-bold text-white mb-0.5">
-                Mar 10
+                The event has been postponed.
               </div>
               <div className="text-white/60 text-[10px] sm:text-xs">Registration Deadline</div>
             </m.div>

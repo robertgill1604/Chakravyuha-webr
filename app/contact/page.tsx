@@ -154,11 +154,11 @@ export default function ContactPage() {
                     },
                     {
                       q: "Can I participate individually?",
-                      a: "Yes! You can participate as an individual (1 member) or form a team of 2-3 members.",
+                      a: "Yes! You can participate as an individual (1 member) or form a team of 2-4 members.",
                     },
                     {
                       q: "How do I form a team?",
-                      a: "Only the team leader needs to register with all team member details. Teams can have 1-3 members. The leader will fill in all member information during registration.",
+                      a: "Only the team leader needs to register with all team member details. Teams can have 1-4 members. The leader will fill in all member information during registration.",
                     },
                     {
                       q: "What should I bring?",

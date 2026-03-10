@@ -3,6 +3,7 @@
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
 import { Award, Clock, Users, Trophy, Target, Lightbulb, Rocket, Globe } from "lucide-react";
+import { getRegistrationDeadline, getShortlistDate, getPaymentDeadline, getEventDate } from "@/lib/dateUtils";
 
 export default function AboutPage() {
   return (
@@ -96,7 +97,7 @@ export default function AboutPage() {
               {
                 icon: Users,
                 title: "Team Size",
-                description: "1-3 members per team for collaborative innovation",
+                description: "1-4 members per team for collaborative innovation",
                 color: "#00d4ff",
               },
               {
@@ -264,12 +265,12 @@ export default function AboutPage() {
               
               <div className="space-y-4">
                 {[
-                  { label: "Registration Deadline", value: new Date(eventConfig.registrationDeadline).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) },
-                  { label: "Shortlist Announcement", value: new Date(eventConfig.shortlistDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) },
-                  { label: "Payment Deadline", value: new Date(eventConfig.paymentDeadline).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) },
-                  { label: "Event Date", value: new Date(eventConfig.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) },
+                  { label: "Registration Deadline", value: getRegistrationDeadline() },
+                  { label: "Shortlist Announcement", value: getShortlistDate() },
+                  { label: "Payment Deadline", value: getPaymentDeadline() },
+                  { label: "Event Date", value: getEventDate() },
                   { label: "Venue", value: eventConfig.venue },
-                  { label: "Team Size", value: "1-3 Members" },
+                  { label: "Team Size", value: "1-4 Members" },
                   { label: "Duration", value: "24 Hours" },
                   { label: "Registration Fee", value: `₹${eventConfig.registrationFee}` },
                 ].map((item, index) => (

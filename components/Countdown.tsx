@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import { isEventPostponed, getPostponeMessage } from "@/lib/dateUtils";
 
 interface TimeLeft {
   days: number;
@@ -139,6 +140,8 @@ export function Countdown({ targetDate }: CountdownProps) {
     return null;
   }
 
+  const postponed = isEventPostponed();
+
   return (
     <section className="relative py-16 sm:py-24 overflow-hidden">
       <div className="absolute inset-0 bg-[#0a0f1a]">
@@ -146,36 +149,58 @@ export function Countdown({ targetDate }: CountdownProps) {
       </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 sm:mb-16"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            Event Starts In
-          </h2>
-          <p className="text-white/60 text-sm sm:text-base">
-            Don&apos;t miss out on this incredible opportunity
-          </p>
-        </m.div>
+        {postponed ? (
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Coming Soon
+            </h2>
+            <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+              {getPostponeMessage()}
+            </p>
+            <p className="text-[#a855f7] text-lg sm:text-xl font-semibold">
+              Stay tuned for updates!
+            </p>
+          </m.div>
+        ) : (
+          <>
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-8 sm:mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+                Event Starts In
+              </h2>
+              <p className="text-white/60 text-sm sm:text-base">
+                Don&apos;t miss out on this incredible opportunity
+              </p>
+            </m.div>
 
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-1 sm:gap-8 md:gap-12"
-        >
-          <CountdownUnit value={timeLeft.days} label="Days" color="green" />
+            <m.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center gap-1 sm:gap-8 md:gap-12"
+            >
+              <CountdownUnit value={timeLeft.days} label="Days" color="green" />
           <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white/20 self-start mt-1 sm:mt-2">:</span>
           <CountdownUnit value={timeLeft.hours} label="Hours" color="blue" />
           <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white/20 self-start mt-1 sm:mt-2">:</span>
           <CountdownUnit value={timeLeft.minutes} label="Minutes" color="purple" />
           <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white/20 self-start mt-1 sm:mt-2">:</span>
-          <CountdownUnit value={timeLeft.seconds} label="Seconds" color="green" />
-        </m.div>
+              <CountdownUnit value={timeLeft.seconds} label="Seconds" color="green" />
+            </m.div>
+          </>
+        )}
       </div>
     </section>
   );

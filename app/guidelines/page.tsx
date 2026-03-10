@@ -3,6 +3,7 @@
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
 import { CheckCircle, Clock, Award, Users, FileText, Lightbulb, AlertTriangle, Coffee, Bed } from "lucide-react";
+import { getRegistrationDeadline, getShortlistDate, getPaymentDeadline, getEventShortDate, isEventPostponed, getPostponeMessage } from "@/lib/dateUtils";
 
 export default function GuidelinesPage() {
   return (
@@ -206,14 +207,20 @@ export default function GuidelinesPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1220] border border-white/[0.06]">
-              <div className="space-y-4">
-                {[
-                  { label: "Registration Opens", date: "Now", highlight: false },
-                  { label: "Registration Deadline", date: new Date(eventConfig.registrationDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: true },
-                  { label: "Shortlist Announcement", date: new Date(eventConfig.shortlistDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: false },
-                  { label: "Payment Deadline", date: new Date(eventConfig.paymentDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: true },
-                  { label: "Hackathon Starts", date: new Date(eventConfig.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), highlight: false },
-                ].map((item, index) => (
+              {isEventPostponed() ? (
+                <div className="text-center py-6">
+                  <p className="text-white/80 mb-3">{getPostponeMessage()}</p>
+                  <p className="text-[#a855f7] font-semibold">Stay tuned for updates!</p>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {[
+                    { label: "Registration Opens", date: "Now", highlight: false },
+                    { label: "Registration Deadline", date: getRegistrationDeadline(), highlight: true },
+                    { label: "Shortlist Announcement", date: getShortlistDate(), highlight: false },
+                    { label: "Payment Deadline", date: getPaymentDeadline(), highlight: true },
+                    { label: "Hackathon Starts", date: getEventShortDate(), highlight: false },
+                  ].map((item, index) => (
                   <m.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -228,7 +235,8 @@ export default function GuidelinesPage() {
                     </span>
                   </m.div>
                 ))}
-              </div>
+                </div>
+              )}
             </div>
           </m.div>
 

@@ -4,6 +4,7 @@ import { RegistrationForm } from "@/components/RegistrationForm";
 import { eventConfig } from "@/config/eventConfig";
 import { m } from "framer-motion";
 import { AlertCircle } from "lucide-react";
+import { getShortlistDate, getPaymentDeadline, isEventPostponed, getPostponeMessage } from "@/lib/dateUtils";
 
 export default function RegisterPage() {
   return (
@@ -75,14 +76,22 @@ export default function RegisterPage() {
                   <h3 className="text-lg font-semibold text-[#a855f7] mb-2">
                     Shortlist & Payment Process
                   </h3>
-                  <p className="text-white/60 text-sm mb-2 leading-relaxed">
-                    After registration, teams will be <span className="text-white font-semibold">shortlisted</span> based on their abstract. 
-                    Shortlisted teams will be informed through <span className="text-[#a855f7]">team leader&apos;s email</span> on{' '}
-                    <span className="text-white font-semibold">{new Date(eventConfig.shortlistDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>.
-                  </p>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Complete payment before <span className="text-white font-semibold">{new Date(eventConfig.paymentDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span> to confirm your spot.
-                  </p>
+                  {isEventPostponed() ? (
+                    <p className="text-white/60 text-sm mb-2 leading-relaxed">
+                      {getPostponeMessage()}
+                    </p>
+                  ) : (
+                    <>
+                      <p className="text-white/60 text-sm mb-2 leading-relaxed">
+                        After registration, teams will be <span className="text-white font-semibold">shortlisted</span> based on their abstract. 
+                        Shortlisted teams will be informed through <span className="text-[#a855f7]">team leader&apos;s email</span> on{' '}
+                        <span className="text-white font-semibold">{getShortlistDate()}</span>.
+                      </p>
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        Complete payment before <span className="text-white font-semibold">{getPaymentDeadline()}</span> to confirm your spot.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

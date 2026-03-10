@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { m } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { isEventPostponed } from "@/lib/dateUtils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -123,6 +124,11 @@ export function Navbar() {
                   }`}
                 >
                   {link.label}
+                  {link.href === "/register" && isEventPostponed() && (
+                    <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-bold bg-[#D4AF37] text-black rounded">
+                      POSTPONED
+                    </span>
+                  )}
                 </span>
                 {pathname === link.href && (
                   <m.div

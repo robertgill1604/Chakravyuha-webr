@@ -11,6 +11,11 @@ export const eventConfig = {
   shortlistDate: "2026-03-11",
   paymentDeadline: "2026-03-15",
   
+  isPostponed: true,
+  postponeMessage: "The event has been postponed. New dates will be announced soon. Registrations remain open!",
+  showDateAsTBA: true,
+  showDeadlineAsTBA: true,
+  
   contact: {
     facultyCoordinator: {
       name: "Mr S Narayanasamy B.E., M.E., (Ph.D)",
@@ -43,7 +48,7 @@ export const eventConfig = {
   registrationFee: "₹2,000",
   teamSize: {
     min: 1,
-    max: 3,
+    max: 4,
   },
 
   themes: [
@@ -87,67 +92,67 @@ export const eventConfig = {
 
   timeline: [
     {
-      date: "March 10, 2026",
+      date: "",
       time: "11:59 PM",
       title: "Registration Deadline",
       description: "Last date to submit your team registration",
     },
     {
-      date: "March 11, 2026",
+      date: "",
       time: "All Day",
       title: "Shortlist Announcement",
       description: "Shortlisted teams will be informed via team leader's email",
     },
     {
-      date: "March 15, 2026",
+      date: "",
       time: "11:59 PM",
       title: "Payment Deadline",
       description: "Last date to complete payment for shortlisted teams",
     },
     {
-      date: "March 18, 2026",
+      date: "",
       time: "09:00 AM",
       title: "Registration & Check-in",
       description: "Team registration verification and welcome kit distribution",
     },
     {
-      date: "March 18, 2026",
+      date: "",
       time: "09:30 AM",
       title: "Opening Ceremony",
       description: "Inauguration and briefing about rules and guidelines",
     },
     {
-      date: "March 18, 2026",
+      date: "",
       time: "10:00 AM",
       title: "Hackathon Begins",
       description: "Coding starts! Teams begin working on their projects",
     },
     {
-      date: "March 18, 2026",
+      date: "",
       time: "01:00 PM",
       title: "Lunch Break",
       description: "Networking lunch and team interactions",
     },
     {
-      date: "March 18, 2026",
+      date: "",
       time: "08:00 PM",
       title: "Dinner & Check-in",
       description: "Progress review and mentor feedback session",
     },
     {
-      date: "March 19, 2026",
+      date: "",
       time: "12:00 AM",
       title: "Midnight Snacks",
       description: "Energy boost for late-night coding",
     },
     {
-      date: "March 19, 2026",
+      date: "",
       time: "08:00 AM",
       title: "Project Presentations",
       description: "Teams present their solutions to judges",
     },
     {
-      date: "March 19, 2026",
+      date: "",
       time: "09:00 AM",
       title: "Submission Deadline",
       description: "All projects must be submitted with presentation",

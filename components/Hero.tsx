@@ -5,7 +5,7 @@ import { m, useScroll, useTransform } from "framer-motion";
 import { Calendar, MapPin, Users, ArrowRight, Zap, ChevronDown } from "lucide-react";
 import { FloatingShapes } from "@/components/effects/FloatingShapes";
 import { eventConfig } from "@/config/eventConfig";
-import { formatDate } from "@/lib/utils";
+import { getEventShortDate } from "@/lib/dateUtils";
 import { useRef } from "react";
 
 export function Hero() {
@@ -142,7 +142,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 mb-6 sm:mb-10 px-2 sm:px-4"
         >
           {[
-            { icon: Calendar, text: formatDate(eventConfig.date), color: "#00ff88" },
+            { icon: Calendar, text: getEventShortDate(), color: "#00ff88" },
             { icon: MapPin, text: "JJCET (Autonomous), Trichy", color: "#00d4ff", link: "https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" },
             { icon: Users, text: `${eventConfig.teamSize.min}-${eventConfig.teamSize.max} Members`, color: "#a855f7" },
           ].map((item, index) => (
