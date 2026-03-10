@@ -48,7 +48,7 @@ export const eventConfig = {
   registrationFee: "₹2,000",
   teamSize: {
     min: 1,
-    max: 4,
+    max: 3,
   },
 
   themes: [
