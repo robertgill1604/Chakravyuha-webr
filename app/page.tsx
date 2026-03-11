@@ -70,7 +70,7 @@ export default function Home() {
               </a>
             </div>
             {/* Second Copy */}
-            <div className="flex items-center">
+            {/*      <div className="flex items-center">
               <a href="/register" className="mx-16 text-base font-bold flex items-center gap-4 hover:scale-105 transition-transform duration-300">
                 <span className="w-3 h-3 rounded-full bg-[#00ff88] animate-pulse shadow-[0_0_10px_#00ff88]"></span>
                 <span className="text-[#00ff88] tracking-wide">Registration Open!</span>
@@ -96,7 +96,7 @@ export default function Home() {
                 <span className="text-white/30 mx-6">✦</span>
               </a>
             </div>
-            {/* Third Copy */}
+            {/* Third Copy 
             <div className="flex items-center">
               <a href="/register" className="mx-16 text-base font-bold flex items-center gap-4 hover:scale-105 transition-transform duration-300">
                 <span className="w-3 h-3 rounded-full bg-[#00ff88] animate-pulse shadow-[0_0_10px_#00ff88]"></span>
@@ -122,7 +122,7 @@ export default function Home() {
                 <span className="text-[#00d4ff] hover:text-[#00ff88] underline underline-offset-4 transition-colors">Register Now!</span>
                 <span className="text-white/30 mx-6">✦</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
