@@ -88,6 +88,7 @@ export default function Home() {
                 <span className="text-white/20 mx-3 sm:mx-4 md:mx-6">✦</span>
               </a>
             </div>
+
             {/* Third Copy */}
             <div className="flex items-center">
               <a href="/register" className="mx-6 sm:mx-10 md:mx-12 lg:mx-16 text-xs sm:text-sm md:text-base font-bold flex items-center gap-2 sm:gap-3 md:gap-4 hover:scale-105 transition-transform duration-300">
