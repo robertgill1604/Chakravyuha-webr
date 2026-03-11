@@ -74,6 +74,16 @@ export function PostponeModal() {
                   ✅ Registrations remain OPEN!
                 </p>
               </div>
+              <div className="w-full p-3 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg mb-4">
+                <p className="text-[#00d4ff] font-semibold text-sm">
+                  💰 Updated Fee: ₹1,500 per team
+                </p>
+              </div>
+              <div className="w-full p-3 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg mb-4">
+                <p className="text-[#00d4ff] font-semibold text-sm">
+                  👥 Team Size: Up to 4 members (individual or team)
+                </p>
+              </div>
               <div className="w-full p-3 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg mb-4">
                 <p className="text-[#00ff88] font-semibold text-sm">
                   For More Details Contact :

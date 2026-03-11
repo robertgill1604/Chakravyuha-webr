@@ -43,12 +43,13 @@ export const eventConfig = {
       separate: true,
       purpose: "Relaxation and sleep",
     },
+    arrivalRequirement: "",
   },
 
-  registrationFee: "₹2,000",
+  registrationFee: "₹1,500",
   teamSize: {
     min: 1,
-    max: 3,
+    max: 4,
   },
 
   themes: [
@@ -193,7 +194,7 @@ export const eventConfig = {
   ],
 
   guidelines: [
-    "Teams can have 1-3 members (individual or team participation allowed)",
+    "Teams can have 1-4 members (individual or team participation allowed)",
     "Teams can use open-source libraries and APIs",
     "Each team must submit a working prototype and presentation link",
     "Plagiarism will result in immediate disqualification",

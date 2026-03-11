@@ -44,7 +44,7 @@ export const registrationSchema = z.object({
     .number()
     .int("Member count must be a whole number")
     .min(1, "Team must have at least 1 member")
-    .max(3, "Team can have maximum 3 members"),
+    .max(4, "Team can have maximum 4 members"),
   
   theme: z
     .string()
@@ -65,7 +65,7 @@ export const registrationSchema = z.object({
     .url("Please enter a valid URL")
     .min(1, "Presentation link is required"),
   
-  members: z.array(memberSchema).min(0).max(2, "Maximum 2 additional members"),
+  members: z.array(memberSchema).min(0).max(3, "Maximum 3 additional members"),
   
   mentorName: z
     .string()

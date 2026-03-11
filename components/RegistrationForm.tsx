@@ -322,6 +322,7 @@ export function RegistrationForm() {
             <option value="1" className="bg-[#070B14]">1 Member (Individual)</option>
             <option value="2" className="bg-[#070B14]">2 Members</option>
             <option value="3" className="bg-[#070B14]">3 Members</option>
+            <option value="4" className="bg-[#070B14]">4 Members</option>
           </select>
         </InputField>
       </div>
