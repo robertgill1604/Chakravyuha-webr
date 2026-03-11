@@ -35,64 +35,95 @@ export default function Home() {
       <Hero />
 
       {/* Registration Open Notice - Home Only */}
-      <div className="bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#a855f7]/10 border-b border-[#00ff88]/20 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap py-2.5">
-          {/* First Copy */}
-          <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
-            {/* <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse" />
-            <span className="text-[#00ff88]">Registration Open Now!</span>
-            <span className="text-white/60">|</span>
-            <span className="text-white">Last Date:</span>
-            <span className="text-[#ff6b35]">March 10, 2026</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00d4ff]">Shortlist:</span>
-            <span className="text-white">March 11</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00ff88]">Event Date:</span>
-            <span className="text-white">March 18-19, 2026</span>
-            <span className="text-white/60">|</span>
-            <span className="text-[#00d4ff] underline underline-offset-2">Click to Register Now!</span>
-            <span className="text-white/40 mx-4">•••</span> */}
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse"></span>
-<span className="text-[#00ff88]">Registration Open Now!</span>
-
-<span className="text-white/60 mx-2">|</span>
-
-<span className="text-[#00ff88]">Event Date:</span>
-
-<span className="text-red-500 text-lg font-semibold ml-2">
-The event date has been extended. New dates will be announced soon. Stay tuned for updates!
-</span>
-
-<span className="text-white/60 mx-2">|</span>
-
-<span className="text-[#00d4ff] underline underline-offset-2 cursor-pointer">
-Click to Register Now!
-</span>
-
-<span className="text-white/40 mx-4">•••</span>
-          </a>
-          {/* Second Copy - Seamless Loop */}
-          <a href="/register" className="mx-12 text-sm font-bold flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00ff88] animate-pulse"></span>
-<span className="text-[#00ff88]">Registration Open Now!</span>
-
-<span className="text-white/60 mx-2">|</span>
-
-<span className="text-[#00ff88]">Event Date:</span>
-
-<span className="text-red-500 text-lg font-semibold ml-2">
-The event date has been extended. New dates will be announced soon. Stay tuned for updates!
-</span>
-
-<span className="text-white/60 mx-2">|</span>
-
-<span className="text-[#00d4ff] underline underline-offset-2 cursor-pointer">
-Click to Register Now!
-</span>
-
-<span className="text-white/40 mx-4">•••</span>
-          </a>
+      <div className="relative bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#a855f7]/10 border-b border-[#00ff88]/20 overflow-hidden">
+        {/* Gradient Fade Edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0a0f1a] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0a0f1a] to-transparent z-10 pointer-events-none"></div>
+        
+        <div className="animate-marquee-container">
+          <div className="animate-marquee whitespace-nowrap py-3">
+            {/* First Copy */}
+            <div className="flex items-center">
+              <a href="/register" className="mx-16 text-base font-bold flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                <span className="w-3 h-3 rounded-full bg-[#00ff88] animate-pulse shadow-[0_0_10px_#00ff88]"></span>
+                <span className="text-[#00ff88] tracking-wide">Registration Open!</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Event:</span>
+                <span className="text-[#00d4ff] font-semibold">April 1-2, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Deadline:</span>
+                <span className="text-[#ff6b6b] font-semibold">March 27, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Fee:</span>
+                <span className="text-[#a855f7] font-semibold">₹1,500/team</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Team:</span>
+                <span className="text-[#a855f7] font-semibold">1-4 Members</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Venue:</span>
+                <span className="text-white font-semibold">JJCET, Trichy</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#D4AF37] font-semibold">Prize Pool: ₹40,000</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#00d4ff] hover:text-[#00ff88] underline underline-offset-4 transition-colors">Register Now!</span>
+                <span className="text-white/30 mx-6">✦</span>
+              </a>
+            </div>
+            {/* Second Copy */}
+            <div className="flex items-center">
+              <a href="/register" className="mx-16 text-base font-bold flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                <span className="w-3 h-3 rounded-full bg-[#00ff88] animate-pulse shadow-[0_0_10px_#00ff88]"></span>
+                <span className="text-[#00ff88] tracking-wide">Registration Open!</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Event:</span>
+                <span className="text-[#00d4ff] font-semibold">April 1-2, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Deadline:</span>
+                <span className="text-[#ff6b6b] font-semibold">March 27, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Fee:</span>
+                <span className="text-[#a855f7] font-semibold">₹1,500/team</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Team:</span>
+                <span className="text-[#a855f7] font-semibold">1-4 Members</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Venue:</span>
+                <span className="text-white font-semibold">JJCET, Trichy</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#D4AF37] font-semibold">Prize Pool: ₹40,000</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#00d4ff] hover:text-[#00ff88] underline underline-offset-4 transition-colors">Register Now!</span>
+                <span className="text-white/30 mx-6">✦</span>
+              </a>
+            </div>
+            {/* Third Copy */}
+            <div className="flex items-center">
+              <a href="/register" className="mx-16 text-base font-bold flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                <span className="w-3 h-3 rounded-full bg-[#00ff88] animate-pulse shadow-[0_0_10px_#00ff88]"></span>
+                <span className="text-[#00ff88] tracking-wide">Registration Open!</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Event:</span>
+                <span className="text-[#00d4ff] font-semibold">April 1-2, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Deadline:</span>
+                <span className="text-[#ff6b6b] font-semibold">March 27, 2026</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Fee:</span>
+                <span className="text-[#a855f7] font-semibold">₹1,500/team</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Team:</span>
+                <span className="text-[#a855f7] font-semibold">1-4 Members</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-white/80">Venue:</span>
+                <span className="text-white font-semibold">JJCET, Trichy</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#D4AF37] font-semibold">Prize Pool: ₹40,000</span>
+                <span className="text-white/40 mx-3">✦</span>
+                <span className="text-[#00d4ff] hover:text-[#00ff88] underline underline-offset-4 transition-colors">Register Now!</span>
+                <span className="text-white/30 mx-6">✦</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -185,7 +216,7 @@ Click to Register Now!
               <div className="absolute inset-0 bg-[#ff6b35]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Clock className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b35] mb-1 sm:mb-2" />
               <div className="text-sm sm:text-xl font-bold text-white mb-0.5">
-                The event has been postponed.
+                Mar 27
               </div>
               <div className="text-white/60 text-[10px] sm:text-xs">Registration Deadline</div>
             </m.div>

@@ -272,7 +272,7 @@ export default function AboutPage() {
                   { label: "Venue", value: eventConfig.venue },
                   { label: "Team Size", value: "1-4 Members" },
                   { label: "Duration", value: "24 Hours" },
-                  { label: "Registration Fee", value: `₹${eventConfig.registrationFee}` },
+                  { label: "Registration Fee", value: `${eventConfig.registrationFee}` },
                 ].map((item, index) => (
                   <div 
                     key={index}

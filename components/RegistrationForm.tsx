@@ -533,7 +533,7 @@ export function RegistrationForm() {
           className="w-full bg-[#070B14] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all duration-300"
           placeholder="https://drive.google.com/... or https://dropbox.com/..."
         />
-        <p className="mt-1 text-xs text-white/40">Upload your PPT/PDF to Google Drive or Dropbox and paste the link here</p>
+        <p className="mt-1 text-xs text-white/40">Upload your PPT/PDF to Google Drive or Dropbox and paste the link here. <span className="text-[#ff6b6b]">Make sure the link is public/accessible.</span></p>
       </InputField>
 
       {/* Submit Button */}

@@ -89,7 +89,7 @@ export function Timeline() {
           {/* Timeline Items */}
           <div className="space-y-6 sm:space-y-12">
             {eventConfig.timeline.map((item, index) => {
-              const isLastDay = item.date.includes("16");
+              const isLastDay = item.date.includes("Apr 2") || item.date.includes("2");
               const colors = isLastDay ? 
                 { bg: "bg-[#D4AF37]/10", border: "border-[#D4AF37]/30", text: "text-[#D4AF37]", glow: "#D4AF37", shadow: "shadow-[#D4AF37]/30" } :
                 index % 3 === 0 ? 
@@ -146,8 +146,8 @@ export function Timeline() {
                       </m.div>
 
                       <h3 className="text-sm sm:text-lg font-semibold text-white mb-0.5 sm:mb-2">{item.title}</h3>
-                      <p className="text-[10px] sm:text-sm text-white/60 mb-0.5 sm:mb-2">{item.description}</p>
-                      <p className="text-[9px] sm:text-xs text-white/40">{item.date}</p>
+                      <p className="text-[10px] sm:text-sm text-white/60 mb-1 sm:mb-2">{item.description}</p>
+                      <p className={`text-[10px] sm:text-xs font-medium ${isLastDay ? "text-[#D4AF37]" : "text-white/50"}`}>{item.date}</p>
 
                       {/* Glow Effect */}
                       {isLastDay && (

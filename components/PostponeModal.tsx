@@ -62,8 +62,10 @@ export function PostponeModal() {
               </h2>
 
               <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-4">
-                The event date has been <span className="text-[#a855f7] font-semibold">extended</span>. 
-                New dates will be announced soon. Registrations remain open!
+                New dates confirmed! Registrations are open.
+                <br />
+                 Don't miss this opportunity to participate!    
+           
               </p>
 
               <div className="w-full p-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg mb-4">
@@ -72,10 +74,16 @@ export function PostponeModal() {
                 </p>
                 <div className="text-white/80 text-sm space-y-2 text-left px-2">
                   <p className="flex items-center gap-2">
-                    <span className="w-5">💰</span> <span className="text-[#00d4ff] font-medium">Updated Fee:</span> ₹1,500 per team
+                    <span className="w-5">📅</span> <span className="text-[#00d4ff] font-medium">Event Date:</span> April 1-2, 2026
                   </p>
                   <p className="flex items-center gap-2">
-                    <span className="w-5">👥</span> <span className="text-[#00d4ff] font-medium">Updated Team Size:</span> 1-4 members allowed
+                    <span className="w-5">⏰</span> <span className="text-[#00d4ff] font-medium">Deadline:</span> March 27, 2026 (11:59 PM)
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="w-5">💰</span> <span className="text-[#00d4ff] font-medium">Fee:</span> ₹1,500 per team
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="w-5">👥</span> <span className="text-[#00d4ff] font-medium">Team Size:</span> 1-4 members allowed
                   </p>
                 </div>
               </div>
