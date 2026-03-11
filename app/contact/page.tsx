@@ -146,19 +146,27 @@ export default function ContactPage() {
                   {[
                     {
                       q: "What is the registration fee?",
-                      a: `The registration fee is ${eventConfig.registrationFee || "₹2,000"} per team. Contact the student coordinator for payment details.`,
+                      a: `The registration fee is ${eventConfig.registrationFee || "₹1,500"} per team. Contact the student coordinator for payment details.`,
+                    },
+                    {
+                      q: "What are the important dates?",
+                      a: "Registration Deadline: March 27, 2026 | Event Dates: April 1-2, 2026 | Payment Deadline: March 29, 2026",
+                    },
+                    {
+                      q: "What should be the PPT link format?",
+                      a: "Upload your PPT/PDF to Google Drive or Dropbox and paste the link. Make sure the link is PUBLIC/ACCESSIBLE (anyone with the link can view).",
+                    },
+                    {
+                      q: "How do I form a team?",
+                      a: "Teams can have 1-4 members. Only the team leader needs to register with all team member details during registration.",
+                    },
+                    {
+                      q: "Can I participate individually?",
+                      a: "Yes! You can participate as an individual (1 member) or form a team of up to 4 members.",
                     },
                     {
                       q: "Is participation certificate provided?",
                       a: "Yes! All participants will receive participation certificates.",
-                    },
-                    {
-                      q: "Can I participate individually?",
-                      a: "Yes! You can participate as an individual (1 member) or form a team of 2-4 members.",
-                    },
-                    {
-                      q: "How do I form a team?",
-                      a: "Only the team leader needs to register with all team member details. Teams can have 1-4 members. The leader will fill in all member information during registration.",
                     },
                     {
                       q: "What should I bring?",
