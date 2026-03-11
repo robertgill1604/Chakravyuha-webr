@@ -58,37 +58,32 @@ export function PostponeModal() {
               </div>
 
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                📢 Important Notice
+                📢 Event Updates
               </h2>
 
-              <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-2">
-                The event has been <span className="text-[#a855f7] font-semibold">postponed</span>.
-              </p>
-              
               <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-4">
-                New dates will be announced soon. Stay tuned for updates!
+                The event date has been <span className="text-[#a855f7] font-semibold">extended</span>. 
+                New dates will be announced soon. Registrations remain open!
               </p>
 
-              <div className="w-full p-3 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg mb-4">
-                <p className="text-[#00ff88] font-semibold text-sm">
-                  ✅ Registrations remain OPEN!
+              <div className="w-full p-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg mb-4">
+                <p className="text-[#00ff88] font-semibold text-sm mb-3">
+                  ✅ Registrations are OPEN!
                 </p>
+                <div className="text-white/80 text-sm space-y-2 text-left">
+                  <p className="flex items-center gap-2">
+                    <span>💰</span> <span className="text-[#00d4ff] font-medium">Updated Fee:</span> ₹1,500 per team
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span>👥</span> <span className="text-[#00d4ff] font-medium">Updated Team Size:</span> 1-4 members allowed
+                  </p>
+                </div>
               </div>
-              <div className="w-full p-3 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg mb-4">
-                <p className="text-[#00d4ff] font-semibold text-sm">
-                  💰 Updated Fee: ₹1,500 per team
+
+              <div className="w-full p-3 bg-white/5 border border-white/10 rounded-lg">
+                <p className="text-white/60 text-sm text-center">
+                  📞 Contact: Mr P Ayyappan - 9042143286
                 </p>
-              </div>
-              <div className="w-full p-3 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg mb-4">
-                <p className="text-[#00d4ff] font-semibold text-sm">
-                  👥 Team Size: Up to 4 members (individual or team)
-                </p>
-              </div>
-              <div className="w-full p-3 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg mb-4">
-                <p className="text-[#00ff88] font-semibold text-sm">
-                  For More Details Contact :
-                </p>
-                <p>Mr P Ayyappan B.E CSE II Year : 9042143286</p>
               </div>
 
              

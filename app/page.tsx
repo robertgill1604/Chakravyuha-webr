@@ -61,7 +61,7 @@ export default function Home() {
 <span className="text-[#00ff88]">Event Date:</span>
 
 <span className="text-red-500 text-lg font-semibold ml-2">
-The event has been postponed. New dates will be announced soon. Stay tuned for updates!
+The event date has been extended. New dates will be announced soon. Stay tuned for updates!
 </span>
 
 <span className="text-white/60 mx-2">|</span>
@@ -82,7 +82,7 @@ Click to Register Now!
 <span className="text-[#00ff88]">Event Date:</span>
 
 <span className="text-red-500 text-lg font-semibold ml-2">
-The event has been postponed. New dates will be announced soon. Stay tuned for updates!
+The event date has been extended. New dates will be announced soon. Stay tuned for updates!
 </span>
 
 <span className="text-white/60 mx-2">|</span>

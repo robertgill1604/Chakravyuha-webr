@@ -12,7 +12,7 @@ export const eventConfig = {
   paymentDeadline: "2026-03-15",
   
   isPostponed: true,
-  postponeMessage: "The event has been postponed. New dates will be announced soon. Registrations remain open!",
+  postponeMessage: "The event date has been extended. New dates will be announced soon. Registrations remain open!",
   showDateAsTBA: true,
   showDeadlineAsTBA: true,
   
