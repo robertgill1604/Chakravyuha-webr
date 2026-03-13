@@ -217,7 +217,7 @@ export function RegistrationForm() {
               <li className="flex items-start gap-2">
                 <span className="text-[#22D3EE] mt-0.5">✓</span>
                 <span>
-                  Separate resting rooms available for relaxation and sleep
+                  Separate common resting rooms available for relaxation and sleep 
                 </span>
               </li>
             )}
