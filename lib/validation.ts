@@ -41,8 +41,7 @@ export const registrationSchema = z.object({
     .regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   
   memberCount: z
-    .number()
-    .int("Member count must be a whole number")
+    .string()
     .min(1, "Team must have at least 1 member")
     .max(4, "Team can have maximum 4 members"),
   

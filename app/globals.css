@@ -57,9 +57,6 @@
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);
   --font-sans: ui-sans-serif, system-ui, sans-serif;
-  
-  /* Custom Breakpoints */
-  --breakpoint-xs: 480px;
 }
 
 * {

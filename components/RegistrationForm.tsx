@@ -18,15 +18,17 @@ export function RegistrationForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState,
     reset,
     watch,
     trigger,
   } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema),
   });
+  
+  const { errors } = formState;
 
-  const memberCount = watch("memberCount") || 1;
+  const memberCount = Number(watch("memberCount")) || 1;
   const additionalMembers = memberCount - 1;
 
   const triggerShake = (fieldName: string) => {
@@ -34,89 +36,12 @@ export function RegistrationForm() {
     setTimeout(() => setShakeField(null), 500);
   };
 
-  const handleManualSubmit = async () => {
+  const handleManualSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted!");
     const data = watch();
+    console.log("Form data:", data);
     
-    const isValid = await trigger();
-    
-    if (!isValid) {
-      setErrorMessage("Please fill in all required fields correctly");
-      if (!data.pptLink) triggerShake("pptLink");
-      if (!data.mentorName) triggerShake("mentorName");
-      if (!data.mentorPhone) triggerShake("mentorPhone");
-      if (!data.mentorEmail) triggerShake("mentorEmail");
-      if (!data.teamName) triggerShake("teamName");
-      if (!data.leaderName) triggerShake("leaderName");
-      if (!data.email) triggerShake("email");
-      if (!data.phone) triggerShake("phone");
-      return;
-    }
-
-    if (!data.pptLink) {
-      setErrorMessage("Please provide a presentation link");
-      triggerShake("pptLink");
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-    setErrorMessage("");
-
-    try {
-      console.log('Starting API call...');
-      const formData = new FormData();
-      formData.append("teamName", data.teamName || "");
-      formData.append("college", data.college || "");
-      formData.append("leaderName", data.leaderName || "");
-      formData.append("email", data.email || "");
-      formData.append("phone", data.phone || "");
-      formData.append("memberCount", (data.memberCount || 1).toString());
-      formData.append("theme", data.theme || "");
-      formData.append("projectTitle", data.projectTitle || "");
-      formData.append("abstract", data.abstract || "");
-      formData.append("pptLink", data.pptLink || "");
-      formData.append("members", JSON.stringify(data.members || []));
-      formData.append("mentorName", data.mentorName || "");
-      formData.append("mentorPhone", data.mentorPhone || "");
-      formData.append("mentorEmail", data.mentorEmail || "");
-      formData.append("honeypot", "");
-
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000);
-
-      const response = await fetch("/api/register", {
-        method: "POST",
-        body: formData,
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitStatus("success");
-        setRegistrationId(result.registrationId);
-        reset();
-      } else {
-        setSubmitStatus("error");
-        setErrorMessage(result.message || "Registration failed. Please try again.");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-      setErrorMessage("An unexpected error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const onSubmit = async (data: RegistrationFormData) => {
-    if (!data.pptLink) {
-      setErrorMessage("Please provide a presentation link");
-      triggerShake("pptLink");
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setErrorMessage("");
@@ -128,12 +53,12 @@ export function RegistrationForm() {
       formData.append("leaderName", data.leaderName);
       formData.append("email", data.email);
       formData.append("phone", data.phone);
-      formData.append("memberCount", data.memberCount.toString());
+      formData.append("memberCount", String(data.memberCount));
       formData.append("theme", data.theme);
       formData.append("projectTitle", data.projectTitle);
       formData.append("abstract", data.abstract);
       formData.append("pptLink", data.pptLink);
-      formData.append("members", JSON.stringify(data.members));
+      formData.append("members", JSON.stringify(data.members || []));
       formData.append("mentorName", data.mentorName || "");
       formData.append("mentorPhone", data.mentorPhone || "");
       formData.append("mentorEmail", data.mentorEmail || "");
@@ -213,7 +138,60 @@ export function RegistrationForm() {
 
   return (
     <>
-    <form id="registration-form" style={{ overflow: 'visible' }}>
+    <form
+      id="registration-form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log("Form submitted via onSubmit!");
+        const data = watch();
+        console.log("Form data:", data);
+        
+        setIsSubmitting(true);
+
+        const formData = new FormData();
+        formData.append("teamName", data.teamName || "");
+        formData.append("college", data.college || "");
+        formData.append("leaderName", data.leaderName || "");
+        formData.append("email", data.email || "");
+        formData.append("phone", data.phone || "");
+        formData.append("memberCount", String(data.memberCount || "1"));
+        formData.append("theme", data.theme || "");
+        formData.append("projectTitle", data.projectTitle || "");
+        formData.append("abstract", data.abstract || "");
+        formData.append("pptLink", data.pptLink || "");
+        formData.append("members", JSON.stringify(data.members || []));
+        formData.append("mentorName", data.mentorName || "");
+        formData.append("mentorPhone", data.mentorPhone || "");
+        formData.append("mentorEmail", data.mentorEmail || "");
+        formData.append("honeypot", "");
+
+        fetch("/api/register", {
+          method: "POST",
+          body: formData,
+        })
+        .then(res => res.json())
+        .then(result => {
+          console.log("API result:", result);
+          if (result.success) {
+            setSubmitStatus("success");
+            setRegistrationId(result.registrationId);
+            reset();
+          } else {
+            setSubmitStatus("error");
+            setErrorMessage(result.message || "Registration failed.");
+          }
+        })
+        .catch(err => {
+          console.error("API error:", err);
+          setSubmitStatus("error");
+          setErrorMessage("An unexpected error occurred.");
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+      }}
+      style={{ overflow: 'visible' }}
+    >
       <div className="space-y-6">
       {/* Accommodation Info */}
       {eventConfig.accommodation.foodProvided && (
@@ -315,7 +293,7 @@ export function RegistrationForm() {
           required
         >
           <select
-            {...register("memberCount", { valueAsNumber: true })}
+            {...register("memberCount")}
             className="w-full bg-[#070B14] border border-white/[0.06] rounded-xl px-4 py-3 text-white focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all duration-300"
           >
             <option value="" className="bg-[#070B14]">Select team size</option>
@@ -536,11 +514,16 @@ export function RegistrationForm() {
         <p className="mt-1 text-xs text-white/40">Upload your PPT/PDF to Google Drive or Dropbox and paste the link here. <span className="text-[#ff6b6b]">Make sure the link is public/accessible.</span></p>
       </InputField>
 
+      </div>
+
       {/* Submit Button */}
       <button
-        type="button"
+        type="submit"
         disabled={isSubmitting}
-        onClick={handleManualSubmit}
+        onClick={(e) => {
+          console.log("Button clicked!");
+          // Don't prevent default - let form submit normally
+        }}
         className="w-full py-4 px-6 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-white font-semibold rounded-xl hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 text-base cursor-pointer"
         style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
       >
@@ -557,7 +540,6 @@ export function RegistrationForm() {
       <p className="text-sm text-white/40 text-center">
         By registering, you agree to follow the hackathon guidelines.
       </p>
-      </div>
     </form>
     </>
   );
