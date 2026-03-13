@@ -515,7 +515,7 @@ export function RegistrationForm() {
       </InputField>
 
       </div>
-
+<div><br /></div>
       {/* Submit Button */}
       <button
         type="submit"
