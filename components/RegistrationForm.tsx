@@ -537,8 +537,9 @@ export function RegistrationForm() {
         )}
       </button>
 
+      
       <p className="text-sm text-white/40 text-center">
-        By registering, you agree to follow the hackathon guidelines.
+       Read guidelines. By registering, you agree to follow the hackathon guidelines.
       </p>
     </form>
     </>

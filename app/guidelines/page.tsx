@@ -283,7 +283,7 @@ export default function GuidelinesPage() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <Bed className="w-6 h-6 text-[#00ff88]" />
-                  <h3 className="font-semibold text-white">Resting Room</h3>
+                  <h3 className="font-semibold text-white">Common Resting Room</h3>
                 </div>
                 <p className="text-white/60">
                   {eventConfig.accommodation.restingRoom.available 
