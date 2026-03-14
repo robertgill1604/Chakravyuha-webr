@@ -200,6 +200,7 @@ export const eventConfig = {
     "Plagiarism will result in immediate disqualification",
     "Decision of judges is final and binding",
     "Participants must bring their own laptops and necessary equipment",
+    "Registration fee once paid is non-refundable under any circumstances",
   ],
 
   prizes: {
