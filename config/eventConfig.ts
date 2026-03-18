@@ -31,8 +31,8 @@ export const eventConfig = {
       phone: "9597467275",
     },
     studentCoordinator3: {
-      name: "Mr J Abdul Javid B.E CSE II Year",
-      phone: "9345992521",
+      name: "Mr V Bragatheesh B.E CSE II Year",
+      phone: "8248901486",
     },
   },
 
