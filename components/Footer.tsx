@@ -164,6 +164,7 @@ export function Footer() {
               {[
                 { icon: MapPin, text: "JJ College of Engineering and Technology (Autonomous), Trichy", color: "#00ff88", link: "https://maps.app.goo.gl/T63G66ZV6nJSAkgi7" },
                 { icon: Phone, label: "Student Coordinator", subtext: `${eventConfig.contact.studentCoordinator.name} - ${eventConfig.contact.studentCoordinator.phone}`, color: "#00d4ff" },
+                { icon: Phone, label: "Assistant Student Coordinator", subtext: `${eventConfig.contact.studentCoordinator3.name} - ${eventConfig.contact.studentCoordinator3.phone}`, color: "#00d4ff" },
                 { icon: Mail, text: eventConfig.contact.studentCoordinator.email || "contact@chakravyuha.in", color: "#a855f7" },
               ].map((item, index) => (
                 <m.li 

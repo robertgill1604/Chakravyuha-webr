@@ -32,7 +32,7 @@ export const eventConfig = {
     },
     studentCoordinator3: {
       name: "Mr V Bragatheesh B.E CSE II Year",
-      phone: "8248901486",
+      phone: "8807984687",
     },
   },
 

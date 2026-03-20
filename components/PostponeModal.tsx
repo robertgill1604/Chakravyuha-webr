@@ -90,7 +90,13 @@ export function PostponeModal() {
 
               <div className="w-full p-3 bg-white/5 border border-white/10 rounded-lg">
                 <p className="text-white/60 text-sm text-center">
-                  📞 Contact: Mr P Ayyappan - 9042143286
+                  📞 Contact: 
+                </p>
+                <p className="text-white/60 text-sm text-center">
+                  Mr P Ayyappan - 9042143286
+                </p>
+                <p className="text-white/60 text-sm text-center">
+                  Mr V Bragatheesh - 8807984687
                 </p>
               </div>
               <div className="w-full h-5 transparent"></div>
