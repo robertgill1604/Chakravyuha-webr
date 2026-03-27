@@ -12,6 +12,7 @@ import { ThemeCard } from "@/components/ThemeCard";
 import { AnimatedCounter } from "@/components/effects/AnimatedCounter";
 import { PostponeModal } from "@/components/PostponeModal";
 import { eventConfig } from "@/config/eventConfig";
+import { p } from "framer-motion/client";
 
 export default function Home() {
   const [registrationCount, setRegistrationCount] = useState<number | null>(null);
@@ -177,6 +178,7 @@ export default function Home() {
               <div className="text-sm sm:text-xl font-bold text-white mb-0.5">
                 {registrationCount !== null ? (
                   <AnimatedCounter target={registrationCount} duration={2} />
+                  
                 ) : (
                   "..."
                 )}

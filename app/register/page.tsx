@@ -68,7 +68,14 @@ function RegistrationCountdown({ onStatusChange }: { onStatusChange?: (isExpired
             <p className="text-white/80"><span className="text-[#00ff88]">📅 Event Dates:</span> April 1-2, 2026</p>
             <p className="text-white/80"><span className="text-[#00d4ff]">📍 Venue:</span> JJCET Campus, Trichy</p>
             <p className="text-white/80"><span className="text-[#a855f7]">⏰ Reporting Time:</span> 9:00 AM on April 1</p>
-            <p className="text-white/60 text-xs mt-3">Shortlisted teams will receive email confirmation. Payment deadline: March 29, 2026</p>
+            <p className="text-white/60 text-xs mt-3">Payment deadline: March 29, 2026</p>
+            <br />
+            <p className="text-white/60 text-sm text-center">
+                  📞 Contact: Mr P Ayyappan - 9042143286 
+                  <br />
+                       for any other queries
+            </p>
+           
           </div>
         </div>
       </div>
@@ -84,6 +91,18 @@ function RegistrationCountdown({ onStatusChange }: { onStatusChange?: (isExpired
             <span className="font-bold">HURRY! Last few minutes(extra 10 min)!</span>
           </div>
           <p className="text-center text-white/70 text-sm mt-1">Registration closes at 00:10 AM</p>
+          <br />
+           <div className="flex justify-center items-center gap-2 sm:gap-4">
+             <CountdownUnit value={timeLeft.days} label="Days" isWarning={isWarning} />
+             <span className="text-2xl font-bold text-white/30">:</span>
+             <CountdownUnit value={timeLeft.hours} label="Hours" isWarning={isWarning} />
+             <span className="text-2xl font-bold text-white/30">:</span>
+             <CountdownUnit value={timeLeft.minutes} label="Mins" isWarning={isWarning} />
+             <span className="text-2xl font-bold text-white/30">:</span>
+             <CountdownUnit value={timeLeft.seconds} label="Secs" isWarning={isWarning} />
+             
+           </div>
+           <br />
         </div>
       ) : (
         <div className="p-6 rounded-xl bg-gradient-to-br from-[#111827]/80 to-[#0B1220]/80 border border-[#00ff88]/20">
@@ -93,13 +112,13 @@ function RegistrationCountdown({ onStatusChange }: { onStatusChange?: (isExpired
           </div>
           <p className="text-center text-white/60 text-sm mb-4">March 27, 2026 (11:59:59 PM)</p>
           <div className="flex justify-center items-center gap-2 sm:gap-4">
-            <CountdownUnit value={timeLeft.days} label="Days" />
+            <CountdownUnit value={timeLeft.days} label="Days" isWarning={isWarning} />
             <span className="text-2xl font-bold text-white/30">:</span>
-            <CountdownUnit value={timeLeft.hours} label="Hours" />
+            <CountdownUnit value={timeLeft.hours} label="Hours" isWarning={isWarning} />
             <span className="text-2xl font-bold text-white/30">:</span>
-            <CountdownUnit value={timeLeft.minutes} label="Mins" />
+            <CountdownUnit value={timeLeft.minutes} label="Mins" isWarning={isWarning} />
             <span className="text-2xl font-bold text-white/30">:</span>
-            <CountdownUnit value={timeLeft.seconds} label="Secs" />
+            <CountdownUnit value={timeLeft.seconds} label="Secs" isWarning={isWarning} />
           </div>
         </div>
       )}
@@ -107,11 +126,11 @@ function RegistrationCountdown({ onStatusChange }: { onStatusChange?: (isExpired
   );
 }
 
-function CountdownUnit({ value, label }: { value: number; label: string }) {
+function CountdownUnit({ value, label, isWarning = false }: { value: number; label: string; isWarning?: boolean }) {
   return (
     <div className="text-center">
       <div className="bg-[#070B14] border border-white/10 rounded-lg px-3 py-2 min-w-[50px]">
-        <span className="text-2xl sm:text-3xl font-bold text-[#00ff88]">
+        <span className={`text-2xl sm:text-3xl font-bold ${isWarning ? 'text-red-500' : 'text-[#00ff88]'}`}>
           {String(value).padStart(2, '0')}
         </span>
       </div>
