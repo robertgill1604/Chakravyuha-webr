@@ -14,8 +14,11 @@ import { PostponeModal } from "@/components/PostponeModal";
 import { eventConfig } from "@/config/eventConfig";
 import { p } from "framer-motion/client";
 
+const REGISTRATION_DEADLINE = "2026-03-28T00:10:00";
+
 export default function Home() {
   const [registrationCount, setRegistrationCount] = useState<number | null>(null);
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
 
   useEffect(() => {
     fetch("/api/registration-count")
@@ -28,6 +31,16 @@ export default function Home() {
       .catch(() => {
         setRegistrationCount(null);
       });
+
+    const checkDeadline = () => {
+      const deadline = new Date(REGISTRATION_DEADLINE).getTime();
+      const now = new Date().getTime();
+      setIsRegistrationClosed(now >= deadline);
+    };
+    
+    checkDeadline();
+    const checkInterval = setInterval(checkDeadline, 1000);
+    return () => clearInterval(checkInterval);
   }, []);
 
   return (
@@ -35,7 +48,8 @@ export default function Home() {
       <PostponeModal />
       <Hero />
 
-      {/* Registration Open Notice - Home Only */}
+      {/* Registration Open Notice - Home Only - Hide after deadline */}
+      {!isRegistrationClosed && (
       <div className="relative bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#a855f7]/10 border-b border-[#00ff88]/20 overflow-hidden">
         {/* Gradient Fade Edges */}
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-[#0a0f1a] to-transparent z-10 pointer-events-none"></div>
@@ -116,6 +130,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Stats Section */}
       <section className="relative py-10 sm:py-20 bg-[#0B1220] overflow-hidden">

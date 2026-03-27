@@ -78,7 +78,8 @@ export function PostponeModal() {
 
               {isExpired ? (
                 <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-4">
-                  The registration deadline has passed. See you at the event!
+                  The registration deadline has passed. 
+                  <br />See you at the event!
                 </p>
               ) : (
                 <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-4">
