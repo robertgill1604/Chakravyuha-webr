@@ -99,7 +99,7 @@ export function PostponeModal() {
                     <Calendar className="w-4 h-4 text-[#00d4ff]" /> <span className="text-[#00d4ff] font-medium">Event Date:</span> April 1-2, 2026
                   </p>
                   <p className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#00d4ff]" /> <span className="text-[#00d4ff] font-medium">Deadline:</span> {isExpired ? "March 28, 2026 (Closed)" : "March 27, 2026 (11:59 PM)"}
+                    <Clock className="w-4 h-4 text-[#00d4ff]" /> <span className="text-[#00d4ff] font-medium">Deadline:</span> {isExpired ? "March 27, 2026 (Closed)" : "March 27, 2026 (11:59 PM)"}
                   </p>
                   <p className="flex items-center gap-2">
                     <CreditCard className="w-4 h-4 text-[#00d4ff]" /> <span className="text-[#00d4ff] font-medium">Fee:</span> ₹1,500 per team
