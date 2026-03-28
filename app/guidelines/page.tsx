@@ -215,7 +215,7 @@ export default function GuidelinesPage() {
               ) : (
                 <div className="space-y-4">
                   {[
-                    { label: "Registration Opens", date: "Now", highlight: false },
+                    { label: "Registration ", date: "Closed", highlight: false},
                     { label: "Registration Deadline", date: getRegistrationDeadline(), highlight: true },
                     { label: "Shortlist Announcement", date: getShortlistDate(), highlight: false },
                     { label: "Payment Deadline", date: getPaymentDeadline(), highlight: true },
